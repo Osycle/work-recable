@@ -240,12 +240,17 @@ figcaption{
 
 
 //--bnr-slider
-
+.screen-wrapper{
+	height: 1080px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url('../img/bg/bg-bnr.jpg');
+	align-items: center;
+	display: flex;
+}
 .bnr-slider{
 	position: relative;
 	overflow: hidden;
-	margin-top: 20px;
-	margin-bottom: 20px;
 }
 
 

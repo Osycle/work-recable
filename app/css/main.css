@@ -9364,11 +9364,24 @@ figcaption {
   overflow-y: auto;
   position: relative; }
 
+.screen-wrapper {
+  height: 1080px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../img/bg/bg-bnr.jpg");
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
 .bnr-slider {
   position: relative;
-  overflow: hidden;
-  margin-top: 20px;
-  margin-bottom: 20px; }
+  overflow: hidden; }
 
 .bnr-carousel {
   padding-top: 15px;
