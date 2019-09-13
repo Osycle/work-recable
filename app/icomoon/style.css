@@ -1,0 +1,193 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?2rh5p1');
+  src:  url('fonts/icomoon.eot?2rh5p1#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?2rh5p1') format('truetype'),
+    url('fonts/icomoon.woff?2rh5p1') format('woff'),
+    url('fonts/icomoon.svg?2rh5p1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icm-"], [class*=" icm-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icm-call-answer:before {
+  content: "\e900";
+}
+.icm-contract:before {
+  content: "\e901";
+}
+.icm-eye:before {
+  content: "\e902";
+}
+.icm-facebook-logo:before {
+  content: "\e903";
+}
+.icm-help:before {
+  content: "\e904";
+}
+.icm-instagram:before {
+  content: "\e905";
+}
+.icm-lamp .path1:before {
+  content: "\e906";
+  color: rgb(0, 0, 0);
+}
+.icm-lamp .path2:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icm-lamp .path3:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icm-lamp .path4:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(227, 30, 22);
+}
+.icm-lamp .path5:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icm-lamp .path6:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icm-lamp .path7:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icm-lamp .path8:before {
+  content: "\e90d";
+  margin-left: -1em;
+  color: rgb(227, 30, 22);
+}
+.icm-lamp .path9:before {
+  content: "\e90e";
+  margin-left: -1em;
+  color: rgb(227, 30, 22);
+}
+.icm-lamp .path10:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icm-lamp .path11:before {
+  content: "\e910";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icm-left-arrow-min:before {
+  content: "\e911";
+}
+.icm-left-arrow:before {
+  content: "\e912";
+}
+.icm-Logo:before {
+  content: "\e913";
+}
+.icm-Loogo-text:before {
+  content: "\e914";
+}
+.icm-mail-black-envelope-symbol:before {
+  content: "\e915";
+}
+.icm-phone-call:before {
+  content: "\e916";
+}
+.icm-placeholder-filled-point:before {
+  content: "\e917";
+}
+.icm-play-button:before {
+  content: "\e918";
+}
+.icm-product .path1:before {
+  content: "\e919";
+  color: rgb(0, 0, 0);
+}
+.icm-product .path2:before {
+  content: "\e91a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icm-product .path3:before {
+  content: "\e91b";
+  margin-left: -1em;
+  color: rgb(227, 30, 22);
+}
+.icm-product .path4:before {
+  content: "\e91c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icm-product .path5:before {
+  content: "\e91d";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icm-right-arrow:before {
+  content: "\e91e";
+}
+.icm-rss-symbol:before {
+  content: "\e91f";
+}
+.icm-shopping-cart:before {
+  content: "\e920";
+}
+.icm-target .path1:before {
+  content: "\e921";
+  color: rgb(0, 0, 0);
+}
+.icm-target .path2:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icm-target .path3:before {
+  content: "\e923";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icm-target .path4:before {
+  content: "\e924";
+  margin-left: -1em;
+  color: rgb(227, 30, 22);
+}
+.icm-telegram:before {
+  content: "\e925";
+}
+.icm-telephone:before {
+  content: "\e926";
+}
+.icm-vk:before {
+  content: "\e927";
+}
+.icm-address:before {
+  content: "\e928";
+}
+.icm-arrow-pointing-to-right:before {
+  content: "\e929";
+}
+.icm-calendar:before {
+  content: "\e92a";
+}
