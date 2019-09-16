@@ -26,6 +26,7 @@ $header-min-menu: 70px;
 	@media (max-width: 991px){
 		//position: fixed;
 	}
+	font-size: 1em;
 	h4{
 		margin-top: 5px;
 		margin-bottom: 5px;
@@ -50,7 +51,12 @@ $header-min-menu: 70px;
 		height: 80px;
 	}
 }
-
+.nowraper{
+	white-space: nowrap;
+	*{
+		white-space: normal;
+	}
+}
 .header-top{
 	width: 100%;
 	color: white;
@@ -61,7 +67,6 @@ $header-min-menu: 70px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	white-space: nowrap;
 	&.align-i-center{
 		flex-wrap: nowrap;
 	}
@@ -100,7 +105,33 @@ $header-min-menu: 70px;
 		width: 267px;
 	}
 }
-
+.header-info{
+	i,span{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.icm{
+		color: $color-1;
+	}
+	@media (min-width: 991px){
+		margin-left: 14%;
+	}
+}
+.header-address{
+	.icm{
+		font-size: 22px;
+	}
+	@media (min-width: 992px) {
+		margin-right: 20px;
+		max-width: 280px;
+		display: inline-block;
+	}
+}
+.header-phones{
+	.icm{
+		font-size: 22px;
+	}
+}
 
 
 .header-scroll{
@@ -314,29 +345,8 @@ ul[class*="sub-menu"]{
 
 
 
-#min-menu{
-	//background-image: url( "../img/other/texture-2.png" );
-	//background-color: $color-1;
-	background-size: 600px;
-	background-position: right;
-
-	.input-box{
-		right: auto;
-		position: relative;
-		display: block;
-		transform: none;
-		top: auto;
-		margin-bottom: 15px;
-		button{
-			position: relative;
-		}
-	}
 
 
-}
-#mm-blocker{
-	background-color: rgba(black, 0.3);
-}
 .min-menu-lang{
 	li{
 		text-decoration: underline;
@@ -384,60 +394,9 @@ ul[class*="sub-menu"]{
 		background-color: black;
 	}
 }
-.mm-navbars-top{
-	//background-color: #333;
-}
-.mm-opening{
-	.min-menu-header{
-		opacity: 0 ;
-		top: -200px;
-	}
-	.header-hidden{
-		transition: height 0.3s ease-in-out 0.0s;
-	}
-
-}
 
 
 
-// ---MM-MENU---
-.mm-navbar{
-	.close-btn{
-		width: 35px;
-		height: 35px;
-	}
-}
-.mm-slideout{
-	z-index: auto;
-}
-.mm-panel{
-	.search-input{
-		input{
-			border-color: $color-gray-2;
-		}
-	}
-}
-.mm-navbar{
-	position: relative;
-	.close-btn{
-		position: absolute;
-		top: 30px;
-		right: 20px;
-		font-size: 60px;
-		opacity: 0.8;
-		[class^="icon"]{
-			//box-shadow: 0 0 2px black;
-		}
-	}
-	.min-menu-logo{
-		img{
-			opacity: 1;
-			filter: drop-shadow( 0 -5px 1px darken($color-1, 5%) );
-			width:100px;
-			margin-top: 15px;
-		}
-	}
-}
 // ---MODAL---
 .modal{
 	@media(max-width:991px ) {
@@ -486,17 +445,38 @@ ul[class*="sub-menu"]{
 
 .bar{
 	width: 60px;
-	height: 45px;
+	height: auto;
 	margin-left: auto;
 	//margin-right: 25px;
+	display: inline-block;
+	&:hover{
+		cursor: pointer;
+	}
+	&.bar-close{
+		.icon-bar{
+			transform-origin: center;
+			bottom: 50%;
+			position: absolute;
+			margin: 0;
+			&:nth-child(1){
+				transform: rotate(45deg);
+			}
+			&:nth-child(2){
+				transform: rotate(-45deg);
+			}
+			&:nth-child(3){
+				display: none;
+			}
+		}
+	}
 }
 .icon-bar{
 	width: 100%;
 	background-color: white;
-	height: 1px;
+	height: 2px;
 	position: relative;
 	display: block;
-	margin: 14px 0;
+	margin: 10px 0;
 	&:first-child{
 		//margin-top: 14px;
 	}
@@ -533,23 +513,19 @@ textarea.form-control{
 
 //search nav
 .search-nav-content, .input-btnin{
-	
+
 	.fa{
-		color: $color-gray-2;
-		transform: scale(0.8);
+		color: white;
 		font-size: 20px;
+		width: 20px;
+		text-align: center;
 	}
 	.search-input-content{
-		padding: 0 5px;
 		width: 50px;
 		height: 50px;
 		margin-left: auto;
 		position: relative;
 		border: none;
-		.fa{
-			
-			
-		}
 	}
 	#search_status{
 		&:checked{
@@ -570,8 +546,9 @@ textarea.form-control{
 	.input-box{
     display: none;
     position: absolute;
-    right: 100%;
-    height: 35px;
+    right: 110%;
+    height: 50px;
+    
     overflow: hidden;
     top: 50%;
     transform: translate(0, -50%);
@@ -580,9 +557,6 @@ textarea.form-control{
 		border: 1px solid $color-gray-1;
     padding: 5px 15px;
     height: 100%;
-	}
-	.fa{
-		width: 20px;
 	}
 	.fa-close{
 		display: none;
@@ -596,13 +570,14 @@ textarea.form-control{
 		width: 100%;
 		height: 100%;
 		display: flex;
-		justify-content: flex-end;
+		background-color: $color-1;
+		justify-content: center;
 		align-items: center;
 	}
 	button{
 		background-color: $color-1;
 		color: white;
-		width: 60px;
+		width: 70px;
     padding: 5px 10px;
     position: absolute;
 	  font-size: 1em;
@@ -624,36 +599,20 @@ textarea.form-control{
 		}
 	}
 }
-.header-lang{
-	padding: 3px 5px;
-	position: relative;
-	img{	
-		border: 1px solid rgba(black, 0.1);
+.header-bar{
+	.bar, .text{
+		vertical-align: middle;
 	}
-	.hide-list{
-		position: absolute;
-		opacity: 0;
-		background-color: $color-2;
-		padding: 5px 10px;
-    margin-left: -10px;
-    margin-top: 15px;
-    right: 25px;
-    box-shadow: 0px 3px 6px -2px rgba(black, 0.5);
-		li{
-			margin: 5px 0;
-		}
-
-		img{
-			
-		}
-	}
-	#langlist{
-		&:checked{
-			&~.hide-list{
-				z-index: 10;
-				opacity: 1;
+	.bar{
+		.icon-bar{
+			&:nth-child(2){
+				width: 75%;
 			}
 		}
+	}
+	.text{
+		padding-right: 20px;
+		font-size: 1em;
 	}
 }
 
@@ -673,7 +632,9 @@ textarea.form-control{
 	}
 }
 
-
+.fixed-menu{
+	z-index: 145;
+}
 
 
 .form-def{

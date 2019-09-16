@@ -82,7 +82,7 @@
 
 			<!-- HEADER TOP -->
 			<div class="header-top">
-				<div class="container relative">
+				<div class="container-fluid-page relative">
 
 					<div class="row">
 
@@ -95,13 +95,16 @@
 							</div>
 
 							<div class="header-info">
-								<span class="p-r-20">
-									<i class="va-middle-inline icm icm-telephone p-r-5"></i>
-									<span class='va-middle-inline'><a href="tel:+998951942288">+998 (95) <b>194-22-88</b></a></span>
+								<span class="header-address nowraper">
+									<i class="icm icm-placeholder-filled-point p-r-10"></i>
+									<span class='va-top-inline'>Обл.Ташкент, Зангиатинский р-н, Катартол Марках Шох 129</span>
 								</span>
-								<span>
-									<i class="va-middle-inline icm icm-mail-black-envelope-symbol p-r-5"></i>
-									<span class='va-middle-inline'><a href="tel:+998951942288">vivagroup@example.com</a></span>
+								<span class="header-phone>
+									<i class="icm icm-call-answer p-r-10"></i>
+									<span>
+										<span><a href="tel:+998971495050"><span class="color-1">+998 97 &nbsp;</span> <big><b>149-50-50</b></big></a></span><br>
+										<span><a href="tel:+998971495050"><span class="color-1">+998 97 &nbsp;</span> <big><b>149-50-50</b></big></a></span>
+									</span>
 								</span>
 							</div>
 
@@ -122,16 +125,15 @@
 							    </div>
 							  </form>
 							</div>
-						
-							<div class="header-lang p-h-15">
-								<input type="checkbox" class="hide" id="langlist">
-								<label for="langlist" role="button">
-									<p><span class="p-r-5">Ру</span><i class="p-l-10 fa fa-caret-down"></i></p>
-								</label>
-								<ul class="hide-list">
-									<li><a href="">Уз</a></li>
-								</ul>
-							</div>
+
+					    <div class="header-bar click-bar off">
+					    	<span class="text">меню</span>
+					    	<div class="bar">
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					    	</div>
+					    </div>
 
 						</div>
 
@@ -143,56 +145,26 @@
 
 		</header>
 		<!-- MIN MENU -->
-		<div id="min-menu" data-aos="fade">
-			<ul>
-				<div class="text-center">
-
-					<div class="header-user color-white inline-block m-v-15">
-						<div class="btn-signin">
-							<a href="">
-								<i class="fa fa-user va-middle-inline p-r-10"></i>
-								<b class="va-middle-inline">Личный кабинет</b>
-							</a>
-						</div>
-					</div>
-					<div class="search-nav-content">
-					  <form action="">
-				    	<div class="input-box">
-				      	<input type="text" name="" class="search-input" placeholder="Поиск">
-				      	<button type="submit">Найти</button>
-				    	</div>
-					  </form>
-					</div>
-					
-				</div>
-				<li><a href="about.html">Наша компания</i></a>
-					<ul>
-						<li><a href="ourmission.html">Наша миссия и задача</a></li>
-						<li><a href="socres.html">Корпоративная социальная ответственность</a></li>
-						<li><a href="contacts.html">Связаться с нами</a></li>
-						<li><a href="direct-sales.html">Индустрия прямых продаж</a></li>
-						<li><a href="honors.html">Доска почета QNET</a></li>
-						<li><a href="branding.html">Брендинг и спонсирование спортивных мероприятий</a></li>
-						<li><a href="feedback.html">Оставайтесь на связи</a></li>
-						<li><a href="ourmission.html">Наша история</a></li>
-					</ul>
-				</li>
-				<li><a href="products.html">Наша продукция</i></a>
-					<ul>
-						<li><a href="product.html">Здоровье и благополучие</a></li>
-						<li><a href="product.html">Часы и ювелирные изделия</a></li>
-						<li><a href="product.html">Дом и уют</a></li>
-						<li><a href="product.html">Образование</a></li>
-						<li><a href="product.html">Уход за собой и красота</a></li>
-						<li><a href="product.html">Отдых</a></li>
-						<li><a href="product.html">Технологии</a></li>
-					</ul>
-				</li>
-				<li><a href="plan.html">Возможность</a></li>
-				<li><a href="news.html">Новости</a></li>
-				<li><a href="info.html">Справочный центр</a></li>
-			</ul>
-		</div>
+		<div class="menudrop">
+	    <div class="menudrop-wrapper">
+		    <div class="menu-bar click-bar off">
+		    	<div class="bar bar-close">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		    	</div>
+		    </div>
+        <menu>
+          <ul>
+            <li>Culture</li>
+            <li>Tech</li>
+            <li>Career</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </menu>
+	    </div>
+    </div>
 		<!-- MIN MENU HEADER -->
 		<div class="min-menu-header hidden-md hidden-lg">
 			<div class="wrapper-bg"></div>
@@ -211,13 +183,11 @@
 				</div>
 			</div>
 			<div class="min-menu-bar col-xs-2">
-				<a href="#min-menu">
 					<div class="bar">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</div>
-				</a>
 			</div>
 		</div>
 		<!-- MAIN -->
@@ -228,78 +198,55 @@
 				<!-- bnr-slider -->
 				<div class="container-fluid-page">
 					<div class="flex-wrapper">
-						<div class="bnr-slider col-md-7">
-							<div class="bnr-carousel">
-								<div class="carousel-items flickity-main-slider flickity-btn-2">
 
-									<figure class="box-xs-10">
-										<div class="img-content">
-											<div class="bg-shadow fuller z-index-1"></div>
-											<div class="img box-xs-10" style="background-image: url('img/slider/1.jpg');" ></div>
-										</div>
-										<div class="carousel-content z-index-1 relative">
-											<div class="align-i-center relative">
-												<div class="box-xs-10 box-md-6 text-content">
-													<div class="wrapper">
-														<h1>Продукты из Америки</h1>
-														<p>В этом блоке мы рекомендуем разместить информацию о Вашей организации, подчеркнуть ее значимость и надежность на рынке оказываемых услуг или предлагаемых товаров.</p>
-														<span class="btn-def m-v-15">
-															<a href="">Подробнее</a>
-														</span>
-													</div>
+						<div class="content-box">
+							<div class="row">
+								<div class="entry-header col-md-5 p-h-15">
+									<h1>КАБЕЛЬНО - ПРОВОДНИКОВАЯ ПРОДУКЦИЯ</h1>
+									<br>
+									<p>В наших каталогах Вы сможете ознакомиться с точными характеристиками товаров, материалами, размерами, просмотреть фотографии и подобрать нужную Вам модель.</p>
+									<div class="btn-content m-v-30">
+										<span class="btn-def">
+											<a href="">Заказать</a>
+										</span>
+									</div>
+								</div>
+								<div class="bnr-slider col-md-7 p-h-15">
+									<div class="bnr-carousel">
+										<div class="carousel-items flickity-main-slider flickity-btn-2">
+
+											<figure class="box-xs-10">
+												<div class="img-content">
+													<div class="bg-shadow fuller z-index-1"></div>
+													<div class="img box-xs-10" style="background-image: url('img/slider/1.jpg');" ></div>
 												</div>
-											</div>
-										</div>
-									</figure>
-									<figure class="box-xs-10">
-										<div class="img-content">
-											<div class="bg-shadow fuller z-index-1"></div>
-											<div class="img box-xs-10" style="background-image: url('img/slider/1.jpg');" ></div>
-										</div>
-										<div class="carousel-content z-index-1 relative">
-											<div class="align-i-center relative">
-												<div class="box-xs-10 box-md-6 text-content">
-													<div class="wrapper">
-														<h1>Продукты из Америки</h1>
-														<p>В этом блоке мы рекомендуем разместить информацию о Вашей организации, подчеркнуть ее значимость и надежность на рынке оказываемых услуг или предлагаемых товаров.</p>
-														<span class="btn-def m-v-15">
-															<a href="">Подробнее</a>
-														</span>
-													</div>
+												<div class="carousel-content z-index-1 relative">
+													<div class="align-i-center relative"><div class="box-xs-10 box-md-6 text-content"><div class="wrapper"></div></div></div>
 												</div>
-											</div>
-										</div>
-									</figure>
-									<figure class="box-xs-10">
-										<div class="img-content">
-											<div class="bg-shadow fuller z-index-1"></div>
-											<div class="img box-xs-10" style="background-image: url('img/slider/1.jpg');" ></div>
-										</div>
-										<div class="carousel-content z-index-1 relative">
-											<div class="align-i-center relative">
-												<div class="box-xs-10 box-md-6 text-content">
-													<div class="wrapper">
-														<h1>Продукты из Америки</h1>
-														<p>В этом блоке мы рекомендуем разместить информацию о Вашей организации, подчеркнуть ее значимость и надежность на рынке оказываемых услуг или предлагаемых товаров.</p>
-														<span class="btn-def m-v-15">
-															<a href="">Подробнее</a>
-														</span>
-													</div>
+											</figure>
+											<figure class="box-xs-10">
+												<div class="img-content">
+													<div class="bg-shadow fuller z-index-1"></div>
+													<div class="img box-xs-10" style="background-image: url('img/slider/1.jpg');" ></div>
 												</div>
-											</div>
+												<div class="carousel-content z-index-1 relative">
+													<div class="align-i-center relative"><div class="box-xs-10 box-md-6 text-content"><div class="wrapper"></div></div></div>
+												</div>
+											</figure>
+
+
 										</div>
-									</figure>
-
-
-
-
+									</div>
 								</div>
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
 
+
+				    
 
 
 

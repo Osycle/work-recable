@@ -63,27 +63,6 @@
 			navText : owlBtn,
 			margin: 30
 		});
-		/*$(".certifications-items.owl-carousel").owlCarousel({
-			nav: true,
-			//items: 3,
-			dots: false,
-			dotsEach: true,
-			autoplay: true,
-			touchDrag: checkSm(),
-			responsive:{
-				0:{items:1},
-				991:{items:4}
-			},
-			navText : owlBtn,
-			margin: 30
-		});
-		*/
-		if( $(".owl-nav-style-1").length > 0 ){
-			$(".owl-nav-style-1").map(function( i, el ){
-				$(el).find(".owl-prev").after($(el).find(".owl-dots"));
-			})
-			
-		}
 		
 
 
@@ -328,6 +307,64 @@
 
 
 
+
+
+$(document).on('click', '.click-bar', function() {
+	if( $(".click-bar").hasClass("on") )
+		runmenu(false);
+	else	
+		runmenu(true);
+
+	$(".click-bar").toggleClass('off on');
+	console.log(true);
+});
+
+
+function runmenu(what) {
+	if (what === true) {
+		tl.play().timeScale(1);
+	} else {
+		tl.reverse().timeScale(2);
+	}
+}
+
+var tl = new TimelineMax();
+tl.pause();
+	tl.to('.menudrop', 0.3, {
+			top:0,
+			width:"100%",
+			ease: Power4.easeOut
+	})
+tl.to('menu ul li:nth-child(1)', 0.5, {
+	  opacity:1,
+			y:35,
+			ease: Power4.easeOut
+	},'-=0.1')
+tl.to('menu ul li:nth-child(2)', 0.5, {
+	  opacity:1,
+			y:35,
+			ease: Power4.easeOut
+	},'-=0.4')
+tl.to('menu ul li:nth-child(3)', 0.3, {
+	  opacity:1,
+			y:35,
+			ease: Power4.easeOut
+	},'-=0.4')
+tl.to('menu ul li:nth-child(4)', 0.3, {
+	  opacity:1,
+			y:35,
+			ease: Power4.easeOut
+	},'-=0.3')
+tl.to('menu ul li:nth-child(5)', 0.2, {
+	  opacity:1,
+			y:35,
+			ease: Power4.easeOut
+	},'-=0.3')
+
+
+
+
+
 	});
 })(jQuery);
 
@@ -395,27 +432,33 @@ function scrolledDiv(el) {
 	return elBottom <= docViewBottom && elTop >= docViewTop;
 }
 
-function roundFix( num, cnt ){
-	num = num+""
-	cnt = cnt + (/./.test(num) || null ? 1 : 0);
-	return num.substring( 0,  cnt)*1
+function intSpace( n, char ){
+	var char = char || " ";
+	if( isNaN(n*1) )
+		return false;
+	n += "";
+	n = new Array(4 - n.length % 3).join("U") + n;
+	var newInt = (n.replace(/([0-9U]{3})/g, "$1"+char).replace(/U/g, "")).trim();
+	if( newInt.substring(newInt.length-1) == char)
+		newInt = newInt.substring(0, newInt.length-1);
+	if( newInt.substring(0, 1) == char)
+		newInt = newInt.substring(1);
+
+	return newInt;
+}
+function roundFix( num, cnt, space ){
+	num += "";
+	if( !(/\./.test(num)) ){
+		if( space )
+			return intSpace(num);
+		return num;
+	}
+	var int = num.split(".")[0];
+	var float = num.split(".")[1];
+	if(space){
+		int = intSpace(int);
+		return (int+"."+float.substring( 0,  cnt));
+	}
+	return (int+"."+float.substring( 0,  cnt)) * 1;
 }
 
-function intSpace( int, replaceType ){
-		var cnt = 0;
-		var newInt = "";
-		int = int*1;
-		replaceType = replaceType || " ";
-		if( typeof int === NaN )
-			return;
-		var arrInt = (int+"").match(/([0-9])/gim).reverse();
-		for (var i = 0; i < arrInt.length; i++) {
-			cnt++;
-			newInt = arrInt[i]+newInt
-			if(cnt === 3){
-				newInt = replaceType+newInt;
-				cnt = 0;
-			}
-		}
-		return newInt;
-}
