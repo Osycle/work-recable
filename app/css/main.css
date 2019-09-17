@@ -7416,7 +7416,7 @@ table {
 .font-family-3 {
   font-family: sans-serif; }
 
-.btn-res, .btn-style button, .btn-def button, .btn-icon button, span.btn-opacity button {
+.btn-res, .btn-style button, .btn-def button, span.btn-opacity button {
   background-color: transparent;
   border: 0;
   padding: 0; }
@@ -7870,51 +7870,73 @@ table {
     -webkit-border-radius: 0px;
     border-radius: 0px; }
 
-.btn-style, .btn-def, .btn-icon, span.btn-opacity {
+.btn-style, .btn-def, span.btn-opacity {
   display: inline-block;
   white-space: nowrap;
   text-align: center;
   overflow: hidden;
   font-family: "TT Norms";
   font-weight: 600; }
-  .btn-style.text-wrap, .text-wrap.btn-def, .text-wrap.btn-icon, span.text-wrap.btn-opacity {
+  .btn-style.text-wrap, .text-wrap.btn-def, span.text-wrap.btn-opacity {
     white-space: wrap; }
-  .btn-style button, .btn-def button, .btn-icon button, span.btn-opacity button {
+  .btn-style button, .btn-def button, span.btn-opacity button {
     width: 100%;
     font-weight: inherit; }
-  .btn-style a, .btn-def a, .btn-icon a, span.btn-opacity a, .btn-style button, .btn-def button, .btn-icon button, span.btn-opacity button, .btn-style .btn-this, .btn-def .btn-this, .btn-icon .btn-this, span.btn-opacity .btn-this {
+  .btn-style a, .btn-def a, span.btn-opacity a, .btn-style button, .btn-def button, span.btn-opacity button, .btn-style .btn-this, .btn-def .btn-this, span.btn-opacity .btn-this {
     line-height: normal;
-    position: relative; }
-    .btn-style a:not([class*="p-h"]), .btn-def a:not([class*="p-h"]), .btn-icon a:not([class*="p-h"]), span.btn-opacity a:not([class*="p-h"]), .btn-style button:not([class*="p-h"]), .btn-def button:not([class*="p-h"]), .btn-icon button:not([class*="p-h"]), span.btn-opacity button:not([class*="p-h"]), .btn-style .btn-this:not([class*="p-h"]), .btn-def .btn-this:not([class*="p-h"]), .btn-icon .btn-this:not([class*="p-h"]), span.btn-opacity .btn-this:not([class*="p-h"]) {
-      padding-left: 45px;
-      padding-right: 45px; }
-    .btn-style a:not([class*="p-v"]), .btn-def a:not([class*="p-v"]), .btn-icon a:not([class*="p-v"]), span.btn-opacity a:not([class*="p-v"]), .btn-style button:not([class*="p-v"]), .btn-def button:not([class*="p-v"]), .btn-icon button:not([class*="p-v"]), span.btn-opacity button:not([class*="p-v"]), .btn-style .btn-this:not([class*="p-v"]), .btn-def .btn-this:not([class*="p-v"]), .btn-icon .btn-this:not([class*="p-v"]), span.btn-opacity .btn-this:not([class*="p-v"]) {
-      padding-top: 15px;
-      padding-bottom: 15px; }
-    .btn-style a:not([class*="flex"]), .btn-def a:not([class*="flex"]), .btn-icon a:not([class*="flex"]), span.btn-opacity a:not([class*="flex"]), .btn-style button:not([class*="flex"]), .btn-def button:not([class*="flex"]), .btn-icon button:not([class*="flex"]), span.btn-opacity button:not([class*="flex"]), .btn-style .btn-this:not([class*="flex"]), .btn-def .btn-this:not([class*="flex"]), .btn-icon .btn-this:not([class*="flex"]), span.btn-opacity .btn-this:not([class*="flex"]) {
-      display: block; }
+    position: relative;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 50px; }
+    .btn-style a:not([class*="p-h"]), .btn-def a:not([class*="p-h"]), span.btn-opacity a:not([class*="p-h"]), .btn-style button:not([class*="p-h"]), .btn-def button:not([class*="p-h"]), span.btn-opacity button:not([class*="p-h"]), .btn-style .btn-this:not([class*="p-h"]), .btn-def .btn-this:not([class*="p-h"]), span.btn-opacity .btn-this:not([class*="p-h"]) {
+      padding-left: 50px;
+      padding-right: 50px; }
+    .btn-style a:not([class*="p-v"]), .btn-def a:not([class*="p-v"]), span.btn-opacity a:not([class*="p-v"]), .btn-style button:not([class*="p-v"]), .btn-def button:not([class*="p-v"]), span.btn-opacity button:not([class*="p-v"]), .btn-style .btn-this:not([class*="p-v"]), .btn-def .btn-this:not([class*="p-v"]), span.btn-opacity .btn-this:not([class*="p-v"]) {
+      padding-top: 5px;
+      padding-bottom: 5px; }
+    .btn-style a:not([class*="flex"]), .btn-def a:not([class*="flex"]), span.btn-opacity a:not([class*="flex"]), .btn-style button:not([class*="flex"]), .btn-def button:not([class*="flex"]), span.btn-opacity button:not([class*="flex"]), .btn-style .btn-this:not([class*="flex"]), .btn-def .btn-this:not([class*="flex"]), span.btn-opacity .btn-this:not([class*="flex"]) {
+      display: block;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
     @media (max-width: 991px) {
-      .btn-style a, .btn-def a, .btn-icon a, span.btn-opacity a, .btn-style button, .btn-def button, .btn-icon button, span.btn-opacity button, .btn-style .btn-this, .btn-def .btn-this, .btn-icon .btn-this, span.btn-opacity .btn-this {
+      .btn-style a, .btn-def a, span.btn-opacity a, .btn-style button, .btn-def button, span.btn-opacity button, .btn-style .btn-this, .btn-def .btn-this, span.btn-opacity .btn-this {
         font-weight: 600;
         font-size: 0.875em; } }
-  .btn-style i, .btn-def i, .btn-icon i, span.btn-opacity i {
+  .btn-style i, .btn-def i, span.btn-opacity i {
     vertical-align: middle; }
+  .btn-style.btn-icon, .btn-icon.btn-def, span.btn-icon.btn-opacity {
+    line-height: 100%; }
+    .btn-style.btn-icon a, .btn-icon.btn-def a, span.btn-icon.btn-opacity a {
+      position: relative; }
+    .btn-style.btn-icon i, .btn-icon.btn-def i, span.btn-icon.btn-opacity i {
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      padding-left: 20px;
+      position: relative;
+      margin-right: -20px; }
 
-.btn-def, .btn-icon {
+.btn-def {
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
   font-size: 0.875em;
   font-weight: 600;
   text-transform: uppercase; }
-  .btn-def *, .btn-icon * {
-    color: inherit; }
-  .btn-def small, .btn-icon small {
+  .btn-def * {
+    color: inherit;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .btn-def small {
     font-weight: 700;
     font-size: 0.75em; }
-  .btn-def:not([class*="color-"]):not([class*="bg-color"]), .btn-icon:not([class*="color-"]):not([class*="bg-color"]) {
+  .btn-def:not([class*="color-"]):not([class*="bg-color"]) {
     color: black; }
-  .btn-def:not([class*="bg-color"]), .btn-icon:not([class*="bg-color"]) {
+  .btn-def:not([class*="bg-color"]) {
     background-color: #ddaa1c;
     background: -webkit-gradient(linear, left bottom, left top, from(#e09108), to(#ddaa1c));
     background: -webkit-linear-gradient(bottom, #e09108, #ddaa1c);
@@ -7922,23 +7944,25 @@ table {
     background: linear-gradient(to top, #e09108, #ddaa1c);
     -webkit-box-shadow: 0 3px 13px 0 rgba(221, 170, 28, 0.5);
     box-shadow: 0 3px 13px 0 rgba(221, 170, 28, 0.5); }
-  .btn-def:not(.changecolor-none):hover, .btn-icon:not(.changecolor-none):hover {
-    background-repeat: repeat;
-    background-color: #c69919; }
-  .btn-def.radius, .btn-icon.radius {
+  .btn-def:not(.changecolor-none):hover {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px); }
+  .btn-def.radius {
     -webkit-border-radius: 20px;
     border-radius: 20px; }
-  .btn-def.reverse:not([class*="bg-color"]), .btn-icon.reverse:not([class*="bg-color"]) {
+  .btn-def.reverse:not([class*="bg-color"]) {
     background-image: none;
     background-color: #666666;
     font-weight: 400; }
-  .btn-def.reverse:not(.changecolor-none):hover, .btn-icon.reverse:not(.changecolor-none):hover {
+  .btn-def.reverse:not(.changecolor-none):hover {
     background-color: #c28b1f; }
 
 span.btn-opacity {
   background-color: transparent;
-  border: 1px solid #ddaa1c;
-  color: #ddaa1c;
+  outline: 1px solid #ddaa1c;
+  outline-offset: -1px;
+  color: inherit;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
@@ -7947,8 +7971,10 @@ span.btn-opacity {
     -o-transition: none !important;
     transition: none !important; }
   span.btn-opacity:hover {
-    color: white;
+    color: #17202f;
     background-color: #ddaa1c; }
+    span.btn-opacity:hover i {
+      color: #17202f; }
   span.btn-opacity.reverse {
     border-color: white;
     color: white; }
@@ -8072,7 +8098,7 @@ body {
   text-size-adjust: none;
   overflow-x: hidden;
   font: 16px "TT Norms";
-  background-color: white;
+  background-color: #17202f;
   background-repeat: repeat-y;
   background-position: center -100px; }
   @media (min-width: 1360px) {
@@ -9191,7 +9217,7 @@ figcaption {
     box-shadow: 0 0 15px -2px rgba(0, 0, 0, 0.5); }
   .bnr-carousel figure {
     overflow: hidden;
-    height: 60vh;
+    height: 70vh;
     -webkit-transition: all 1.8s ease;
     -o-transition: all 1.8s ease;
     transition: all 1.8s ease;
@@ -9259,11 +9285,39 @@ figcaption {
       .bnr-carousel .flickity-page-dots li.is-selected, .bnr-carousel .flickity-dots-1 .flickity-page-dots li.is-selected {
         background-color: #ddaa1c; }
 
-.content-box {
-  color: white; }
-  .content-box h1 {
-    color: #ddaa1c;
-    font-size: 3em; }
+.fullscreen-container {
+  width: 100%;
+  position: relative;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 0;
+  height: 100vh; }
+  .fullscreen-container .slotholder {
+    position: absolute; }
+  .fullscreen-container .container-fluid-page {
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .fullscreen-container .tp-caption {
+    position: relative !important; }
+  .fullscreen-container .col-md-5, .fullscreen-container .col-md-4 {
+    position: relative !important; }
+  .fullscreen-container * {
+    white-space: normal; }
+  .fullscreen-container .entry-header h1 {
+    color: #ddaa1c; }
+
+.banner {
+  width: 100%;
+  position: relative; }
 
 menu ul li {
   margin: 20px auto;

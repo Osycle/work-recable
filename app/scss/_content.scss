@@ -256,7 +256,7 @@ figcaption{
 
 
 .bnr-carousel{
-	$slider-height: 60vh;
+	$slider-height: 70vh;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	position: relative;
@@ -336,15 +336,75 @@ figcaption{
 }
 
 
-.content-box{
+
+
+
+
+.fullscreen-container {
+	width:100%;
+	position:relative;
+	background-size: cover;
+	background-repeat: no-repeat;
 	color: white;
+	padding:0;
+	height: 100vh;
+	.slotholder{
+		position: absolute;
+	}
+	.container-fluid-page{
+		height: 100%;
+		display: flex;
+		align-items: center;
+	}
+	.tp-caption{
+		position: relative !important;
+	}
+	.col-md-5, .col-md-4{
+		position: relative !important;
+	}
+	*{
+		white-space: normal;
+	}
 	.entry-header{
+		//top: 20vh !important;
+		h1{
+			color: $color-1;
+
+		}
 	}
-	h1{
-		color: $color-1;
-		font-size: em(48);
-	}
+
+
 }
+ 
+.banner{
+	width:100%;
+	position:relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

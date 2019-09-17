@@ -364,6 +364,76 @@ tl.to('menu ul li:nth-child(5)', 0.2, {
 
 
 
+		   $(".rev-slider").revolution({
+					delay:9999999999999,
+				//startwidth:"100vw",
+					startheight: $( window ).height(),
+					autoHeight:"off",
+					fullScreenAlignForce:"off",
+
+					onHoverStop:"off",
+
+					thumbWidth:100,
+					thumbHeight:50,
+					thumbAmount:3,
+
+					hideThumbsOnMobile:"on",
+					hideBulletsOnMobile:"on",
+					hideArrowsOnMobile:"on",
+					hideThumbsUnderResoluition:0,
+
+					hideThumbs: -1,
+					hideTimerBar:"on",
+
+					keyboardNavigation:"off",
+
+					navigationType:"none",
+					navigationArrows:"solo",	//solo
+					navigationStyle:"round",
+
+					navigationHAlign:"center",
+					navigationVAlign:"bottom",
+					navigationHOffset: 0,
+					navigationVOffset: 30,
+
+					soloArrowLeftHalign:"left",
+					soloArrowLeftValign:"center",
+					soloArrowLeftHOffset:30,
+					soloArrowLeftVOffset:0,
+
+					soloArrowRightHalign:"right",
+					soloArrowRightValign:"center",
+					soloArrowRightHOffset:30,
+					soloArrowRightVOffset:0,
+
+
+					touchenabled: "off",
+					swipe_velocity:"0.7",
+					swipe_max_touches:"1",
+					swipe_min_touches:"1",
+					drag_block_vertical: "false",
+
+					stopAtSlide:-1,
+					stopAfterLoops:-1,
+					hideCaptionAtLimit:0,
+					hideAllCaptionAtLilmit:0,
+					hideSliderAtLimit:0,
+
+					fullWidth:"off",
+					fullScreen:"off",
+					fullScreenOffsetContainer: "#header",
+
+					dottedOverlay:"none",
+					forceFullWidth:"off",
+
+		      shadow:0
+
+		    })
+		   //.find("li").click(function(){ revSlider.revnext() })
+			
+
+
+
 
 	});
 })(jQuery);
