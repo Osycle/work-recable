@@ -669,6 +669,13 @@ table {
 	}
 }
 
+.bgshadow-1{
+	background: linear-gradient(to top, #e09108, $color-1);
+	box-shadow: 0 3px 13px 0 rgba($color-1, 0.5);
+}
+.shadow-1{
+	box-shadow: 0 3px 13px 0 rgba($color-1, 0.5);
+}
 
 
 span.btn-opacity{
@@ -848,7 +855,6 @@ body{
 	-webkit-font-smoothing: antialiased;
 	text-size-adjust: none;
 	overflow-x: hidden;
-	//color: white;
 	font: $fs-def#{px} $font-family-1;
 	//height: auto;
 	//background-image: url('../img/bg/bg-body.jpg');
@@ -858,6 +864,24 @@ body{
 	background-position: center -100px;
 	@media (min-width: 1360px){
 		font: 16px $font-family-1;
+	}
+}
+
+:hover{
+	cursor: url('../img/other/cursor-default-2.png'), default;
+}
+a, [role="button"], button{
+	&:hover{
+		&, *{
+			cursor: pointer;
+		}
+	}
+}
+input, textarea{
+	&:hover{
+		&, *{
+			cursor: text;
+		}
 	}
 }
 
@@ -970,6 +994,7 @@ h2{
 h3{
 	font-weight: 600;
 	font-size: em(20);
+	text-transform: uppercase;
 	@media (max-width: 430px) {
 		font-size: em(17/1.1);
 	}
@@ -1027,7 +1052,7 @@ main{
 	overflow: inherit;
 	//min-height: 300px;
 	z-index: 1;
-	color: black;
+	color: white;
 	min-height: 300px;
 	background-position: center bottom;
 	background-repeat: no-repeat;

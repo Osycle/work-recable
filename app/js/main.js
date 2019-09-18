@@ -309,131 +309,158 @@
 
 
 
-$(document).on('click', '.click-bar', function() {
-	if( $(".click-bar").hasClass("on") )
-		runmenu(false);
-	else	
-		runmenu(true);
+		$(document).on('click', '.click-bar', function() {
+			if( $(".click-bar").hasClass("on") )
+				runmenu(false);
+			else	
+				runmenu(true);
 
-	$(".click-bar").toggleClass('off on');
-	console.log(true);
-});
-
-
-function runmenu(what) {
-	if (what === true) {
-		tl.play().timeScale(1);
-	} else {
-		tl.reverse().timeScale(2);
-	}
-}
-
-var tl = new TimelineMax();
-tl.pause();
-	tl.to('.menudrop', 0.3, {
-			top:0,
-			width:"100%",
-			ease: Power4.easeOut
-	})
-tl.to('menu ul li:nth-child(1)', 0.5, {
-	  opacity:1,
-			y:35,
-			ease: Power4.easeOut
-	},'-=0.1')
-tl.to('menu ul li:nth-child(2)', 0.5, {
-	  opacity:1,
-			y:35,
-			ease: Power4.easeOut
-	},'-=0.4')
-tl.to('menu ul li:nth-child(3)', 0.3, {
-	  opacity:1,
-			y:35,
-			ease: Power4.easeOut
-	},'-=0.4')
-tl.to('menu ul li:nth-child(4)', 0.3, {
-	  opacity:1,
-			y:35,
-			ease: Power4.easeOut
-	},'-=0.3')
-tl.to('menu ul li:nth-child(5)', 0.2, {
-	  opacity:1,
-			y:35,
-			ease: Power4.easeOut
-	},'-=0.3')
+			$(".click-bar").toggleClass('off on');
+			console.log(true);
+		});
 
 
+		function runmenu(what) {
+			if (what === true) {
+				tl.play().timeScale(1);
+			} else {
+				tl.reverse().timeScale(2);
+			}
+		}
 
-
-		   $(".rev-slider").revolution({
-					delay:9999999999999,
-				//startwidth:"100vw",
-					startheight: $( window ).height(),
-					autoHeight:"off",
-					fullScreenAlignForce:"off",
-
-					onHoverStop:"off",
-
-					thumbWidth:100,
-					thumbHeight:50,
-					thumbAmount:3,
-
-					hideThumbsOnMobile:"on",
-					hideBulletsOnMobile:"on",
-					hideArrowsOnMobile:"on",
-					hideThumbsUnderResoluition:0,
-
-					hideThumbs: -1,
-					hideTimerBar:"on",
-
-					keyboardNavigation:"off",
-
-					navigationType:"none",
-					navigationArrows:"solo",	//solo
-					navigationStyle:"round",
-
-					navigationHAlign:"center",
-					navigationVAlign:"bottom",
-					navigationHOffset: 0,
-					navigationVOffset: 30,
-
-					soloArrowLeftHalign:"left",
-					soloArrowLeftValign:"center",
-					soloArrowLeftHOffset:30,
-					soloArrowLeftVOffset:0,
-
-					soloArrowRightHalign:"right",
-					soloArrowRightValign:"center",
-					soloArrowRightHOffset:30,
-					soloArrowRightVOffset:0,
-
-
-					touchenabled: "off",
-					swipe_velocity:"0.7",
-					swipe_max_touches:"1",
-					swipe_min_touches:"1",
-					drag_block_vertical: "false",
-
-					stopAtSlide:-1,
-					stopAfterLoops:-1,
-					hideCaptionAtLimit:0,
-					hideAllCaptionAtLilmit:0,
-					hideSliderAtLimit:0,
-
-					fullWidth:"off",
-					fullScreen:"off",
-					fullScreenOffsetContainer: "#header",
-
-					dottedOverlay:"none",
-					forceFullWidth:"off",
-
-		      shadow:0
-
-		    })
-		   //.find("li").click(function(){ revSlider.revnext() })
-			
+		var tl = new TimelineMax();
+		tl.pause();
+			tl.to('.menudrop', .3, {
+					top:0,
+					right: 0,
+					width:"100%",
+					borderRadius: "0 0 0 0",
+					ease: Power4.easeOut
+			})
+		tl.to('menu ul li:nth-child(1)', .5, {
+			  opacity:1,
+					y:35,
+					ease: Power4.easeOut
+			},'-=0.1')
+		tl.to('menu ul li:nth-child(2)', .5, {
+			  opacity:1,
+					y:35,
+					ease: Power4.easeOut
+			},'-=0.4')
+		tl.to('menu ul li:nth-child(3)', .3, {
+			  opacity:1,
+					y:35,
+					ease: Power4.easeOut
+			},'-=0.4')
+		tl.to('menu ul li:nth-child(4)', .3, {
+			  opacity:1,
+					y:35,
+					ease: Power4.easeOut
+			},'-=0.3')
+		tl.to('menu ul li:nth-child(5)', .2, {
+			  opacity:1,
+					y:35,
+					ease: Power4.easeOut
+			},'-=0.3')
 
 
 
+
+
+	   window.revslider = $(".rev-slider").revolution({
+				delay:9999999999999,
+			//startwidth:"100vw",
+				startheight: $( window ).height(),
+				autoHeight:"off",
+				fullScreenAlignForce:"off",
+
+				onHoverStop:"off",
+
+				thumbWidth:100,
+				thumbHeight:50,
+				thumbAmount:3,
+
+				hideThumbsOnMobile:"on",
+				hideBulletsOnMobile:"on",
+				hideArrowsOnMobile:"on",
+				hideThumbsUnderResoluition:0,
+
+				hideThumbs: -1,
+				hideTimerBar:"on",
+
+				keyboardNavigation:"off",
+
+				navigationType:"none",
+				navigationArrows:"solo",	//solo
+				navigationStyle:"round",
+
+				navigationHAlign:"center",
+				navigationVAlign:"bottom",
+				navigationHOffset: 0,
+				navigationVOffset: 30,
+
+				soloArrowLeftHalign:"left",
+				soloArrowLeftValign:"center",
+				soloArrowLeftHOffset:30,
+				soloArrowLeftVOffset:0,
+
+				soloArrowRightHalign:"right",
+				soloArrowRightValign:"center",
+				soloArrowRightHOffset:30,
+				soloArrowRightVOffset:0,
+
+
+				touchenabled: "off",
+				swipe_velocity:"0.7",
+				swipe_max_touches:"1",
+				swipe_min_touches:"1",
+				drag_block_vertical: "false",
+
+				stopAtSlide:-1,
+				stopAfterLoops:-1,
+				hideCaptionAtLimit:0,
+				hideAllCaptionAtLilmit:0,
+				hideSliderAtLimit:0,
+
+				fullWidth:"off",
+				fullScreen:"off",
+				fullScreenOffsetContainer: "#header",
+
+				dottedOverlay:"none",
+				forceFullWidth:"off",
+
+	      shadow:0
+
+	    })
+	   //.find("li").click(function(){ revSlider.revnext() })
+		function scrollPage(){
+	  	if( scrollDown )
+	  		revslider.revnext()
+	  	else
+	  		revslider.revnext()
+	  }
+
+		window.scrollDown = false;
+		var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
+
+    $(window).bind(mousewheelevt, function(e){
+	       
+		    var evt = window.event || e //equalize event object     
+		    evt = evt.originalEvent ? evt.originalEvent : evt; //convert to originalEvent if possible               
+		    var delta = evt.detail ? evt.detail*(-40) : evt.wheelDelta //check for detail first, because it is used by Opera and FF
+
+		    if( (delta > 0) && scrollDown ) {
+	       	console.log("up");
+		      scrollDown = false;
+		      scrollPage();
+		    }
+		    else if( (delta < 0) && !scrollDown){
+	       	console.log("down");
+	       	scrollDown = true;
+	       	scrollPage();
+		    }   
+
+    });
 
 	});
 })(jQuery);
