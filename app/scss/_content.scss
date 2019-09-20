@@ -463,10 +463,11 @@ figcaption{
 	}
 }
 .short-news-items{
-	margin-top: 8vh;
+	margin-top: 4vh;
 	figure{
 		position: relative;
 	}
+
 	.date-content{
 		padding: 7px 7px;
 		display: inline-block;
@@ -486,6 +487,29 @@ figcaption{
 			padding-right: 10px;
 		}
 	}
+	.owl-stage-outer{
+		overflow: visible;
+	}
+	.owl-stage{
+		white-space: nowrap;
+		display: flex;
+		*{
+			white-space: normal;
+		}
+	}
+	.owl-item{
+		transition: all 0.5s ease;
+	}
+	.img-content{
+		position: relative;
+		width: 100%;
+		&:before{
+			@extend .clafclear;
+			background: linear-gradient( to top, $color-2, rgba($color-2, 0.3));
+			opacity: 0;
+			transition: all 1s ease;
+		}
+	}
 	.img{
 		height: 55vh;
 		background-size: cover;
@@ -493,11 +517,18 @@ figcaption{
 	.desc-content{
 		position: absolute;
 		bottom: 0;
+		
 		font-size: 0.95em;
 		background-color: rgba(black, 0.5);
 		padding: 7%;
-		h3{
+		h2, h3{
 			margin-top: 0;
+			text-transform: uppercase;
+		}
+		p{
+			//transition: all 0.3s ease;
+    	max-height: 40px;
+    	overflow: hidden;
 		}
 		a{
 			color: $color-1;
@@ -511,12 +542,31 @@ figcaption{
 			margin-bottom: 10px;
 		}
 	}
+	.center{
+		.img-content{
+			width: 75%;
+			.img{
+				//@extend .shadow-def;
+			}
+			&:before{
+				opacity: 1;
+			}
+		}
+		.desc-content{
+			background-color: transparent;
+			transform: translate(60px, 10px);
+			transition: all 0.5s ease, transform 0.8s ease; 
+			p{
+				width: 27vw;
+				max-height: 300px;
+			}
+			h3{
+				text-shadow: 0px 0px 10px rgba(black, 0.4);
+				font-size: 2em;
+			}
+		}
+	}
 }
-
-
-
-
-
 
 
 

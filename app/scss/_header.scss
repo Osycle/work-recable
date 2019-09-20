@@ -204,54 +204,102 @@ $header-min-menu: 70px;
 
 
 .menudrop{
+	color: white;
 	position:fixed;
 	top:-100%;
 	width:0;
 	height:100vh;
 	z-index: 2;
-	background-color:rgb(12, 12, 13);
 	overflow:hidden;
 	z-index: 110;
 	right: 0;
 	transform-origin: 100% 50%;
-	padding-bottom:30px;
 	border-radius: 0 0 0% 100%;
 	right: -20%;
+	display: flex;
+	align-items: center;
 	transition: all 0.5s ease;
+	background-color: black;
+	background-image: url('../img/bg/bg-menu.jpg');
+	background-position: center;
+	&:before{
+		@extend .clafclear;
+		background-image: url('../img/other/menu-logo-bar.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: left 0;
+		
+	}
 	.bar{
 		height: 60px;
 		position: absolute;
 		right: 30px;
 		top: 30px;
 	}
-	menu ul li {
-		margin:20px auto;
-		text-transform:uppercase;
-		font-size:2.4rem;
-		opacity:0;
-		cursor:pointer;
+	.menudrop-wrapper{
+		width: 100%;
 	}
-	menu ul li:nth-child(1) {
-		color:red;
+	.header-info-wrapper{
+		position: inherit;
 	}
-	menu ul li:hover {
-		color:red;
+	.header-info{
+		width: 360px;
+		position: absolute;
+		bottom: 15px;
+		margin-left: 5%;
+		left: 0;
 	}
-	menu {
-		width:300px;
-		margin:60px auto;
-		position:relative;
-		text-align:center;
-		font-family: 'Major Mono Display', monospace;
-	}
-	menu, menu a {
-		color:#fff;
-	}
-	@media only screen and (min-width: 576px) {
-		menu ul li {
-			font-size:3.2rem;
+	.header-info-item{
+		display: flex;
+		height: 95px;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 2px;
+		display: block;
+		padding: 20px 30px;
+		background-color: $color-2;
+		.icm{
+			font-size: 22px;
+		}
+		&>div{
+			width: 100%;
+			display: flex;
+			align-items: center;
+			height: 100%;
 		}
 	}
+	.menu{
+		margin-left: 350px;
+	}
+	menu{
+		margin:0 auto;
+		position:relative;
+		text-align:center;
+		ul{
+			@extend .letter-none;
+		}
+		li{
+			margin:20px auto;
+			text-transform:uppercase;
+			font-size: em(60);
+			transform: matrix(1, 0, 0, 1, 0, 34);
+			font-family: $font-family-1;
+			font-weight: 900;
+			opacity:0;
+			cursor:pointer;
+			line-height: 100%;
+			&:nth-child(1) {
+				margin-top: 0;				
+			}
+			&:hover, &.active{
+				color: $color-1;
+			}
+			@media (max-width: 991px) {
+				font-size: em(24);
+			}
+		}
+	}
+
 }
 
 

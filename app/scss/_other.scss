@@ -540,9 +540,18 @@ div.owl-nav{
 	.owl-nav{
 		position: relative;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		padding-top: 25px;
 		padding-bottom: 25px;
+		.owl-prev, .owl-next{
+			
+			path{
+				fill: white ;
+			}
+			&:hover{
+				@extend .bgshadow-1;
+			}
+		}
 		.owl-prev{
 			margin-right: 0;
 		}
@@ -597,7 +606,10 @@ div.owl-nav{
 	display: inline-block;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	border: none;
+	outline: 1px solid $color-1;
+	@extend [role="button"];
 	&:hover, &:focus{
 		opacity: 1;
 		border: none;
@@ -611,45 +623,12 @@ div.owl-nav{
 		fill: $color-1;
 	}
 	svg{
-		width: 50px;
+		width: 20px;
 		display: block;
-		height: 50px;
+		height: 20px;
 		//display: inline-block;
 	}
 	.arrow{
     transform-origin: 0 0;
-	}
-}
-.owl-btn-2{
-	.owl-nav{
-    top: 50%;
-    display: flex;
-    justify-content: space-between;
-		transform: translateY(-50%);
-	}
-	.owl-btn{
-		
-		.arrow{
-			fill: $color-1;
-		}
-		&:hover{
-			.arrow{
-				
-			}
-		}
-	}
-}
-.owl-btn-1{
-	.owl-nav{
-		top: auto;
-		// @media (min-width: 992px) {
-		// 	bottom: -65px;
-		// }
-	}	
-	.owl-prev{
-		right: 60px;
-	}
-	.owl-next{
-		right: 0;
 	}
 }
