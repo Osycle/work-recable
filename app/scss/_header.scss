@@ -65,6 +65,7 @@ $header-min-menu: 70px;
 	height: $header-top-height;
 	//overflow: hidden;
 	display: flex;
+	filter: drop-shadow();
 	align-items: center;
 	justify-content: space-between;
 	&.align-i-center{
@@ -101,6 +102,7 @@ $header-min-menu: 70px;
 	}
 }
 .header-logo{
+	filter: drop-shadow(2px 4px 6px black);
 	img{
 		width: 267px;
 	}
@@ -218,7 +220,7 @@ $header-min-menu: 70px;
 	right: -20%;
 	display: flex;
 	align-items: center;
-	transition: all 0.5s ease;
+	transition: all 0.4s ease;
 	background-color: black;
 	background-image: url('../img/bg/bg-menu.jpg');
 	background-position: center;
@@ -233,8 +235,8 @@ $header-min-menu: 70px;
 	.bar{
 		height: 60px;
 		position: absolute;
-		right: 30px;
-		top: 30px;
+		right: 60px;
+		top: 20px;
 	}
 	.menudrop-wrapper{
 		width: 100%;
@@ -270,11 +272,12 @@ $header-min-menu: 70px;
 	}
 	.menu{
 		margin-left: 350px;
+		width: 360px;
+    margin: auto;
 	}
 	menu{
 		margin:0 auto;
 		position:relative;
-		text-align:center;
 		ul{
 			@extend .letter-none;
 		}
@@ -404,7 +407,7 @@ $header-min-menu: 70px;
 
 
 .bar{
-	width: 60px;
+	width: 45px;
 	height: auto;
 	margin-left: auto;
 	//margin-right: 25px;
@@ -433,7 +436,7 @@ $header-min-menu: 70px;
 .icon-bar{
 	width: 100%;
 	background-color: white;
-	height: 1px;
+	height: 3px;
 	position: relative;
 	display: block;
 	margin: 10px 0;
@@ -560,6 +563,7 @@ textarea.form-control{
 	}
 }
 .header-bar{
+	filter: drop-shadow(2px 4px 6px black);
 	.bar, .text{
 		vertical-align: middle;
 	}

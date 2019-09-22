@@ -168,18 +168,22 @@ html{
 
 	.flickity-prev-next-button{
 		@extend .owl-btn;
-		padding: 0;
-		width: 48px;
-		height: 48px;
+		border-radius: 0;
 		svg{
-			width: 100% !important;
-			height: 100% !important;
-			//.arrow{
-			//	transform-origin: 50% 50%;
-			//}
-			top: 0;
-			left: 0;
+			top: auto;
+			left: auto;
+			right: auto;
+			width: 10px !important;
+			position: relative;
+			height: 10px !important;
 		}
+		&:hover{
+			@extend .bgshadow-1;
+		}
+		.arrow{
+			fill: white;
+		}
+		
 	}
 	&.flickity-btn-hidden{
 		.flickity-prev-next-button{
@@ -192,19 +196,7 @@ html{
 		}
 	}
 }
-.flickity-btn-2{
-	.flickity-prev-next-button{
-		background: transparent;
-		.arrow{
-			fill: white;
-		}
-		&:hover{
-			.arrow{
-				fill: $color-2;
-			}
-		}
-	}
-}
+
 .flickity-page-dots{
 	margin: 30px 0;
 	z-index: 1;
@@ -610,18 +602,6 @@ div.owl-nav{
 	border: none;
 	outline: 1px solid $color-1;
 	@extend [role="button"];
-	&:hover, &:focus{
-		opacity: 1;
-		border: none;
-		cursor: pointer;
-		.arrow{
-			fill: white;
-		}
-	}
-
-	.arrow{
-		fill: $color-1;
-	}
 	svg{
 		width: 20px;
 		display: block;

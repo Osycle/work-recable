@@ -195,7 +195,7 @@
 
 
 		/*FLIKITY*/
-		var arrowStyle = "M 198.608,246.104 382.664,62.04 c 5.068,-5.056 7.856,-11.816 7.856,-19.024 0,-7.212 -2.788,-13.968 -7.856,-19.032 L 366.536,7.864 C 361.476,2.792 354.712,0 347.504,0 340.296,0 333.54,2.792 328.476,7.864 L 109.328,227.008 c -5.084,5.08 -7.868,11.868 -7.848,19.084 -0.02,7.248 2.76,14.028 7.848,19.112 l 218.944,218.932 c 5.064,5.072 11.82,7.864 19.032,7.864 7.208,0 13.964,-2.792 19.032,-7.864 l 16.124,-16.12 c 10.492,-10.492 10.492,-27.572 0,-38.06 z";
+		var arrowStyle = "M 30,50 L 55,75 L 60,70 L 40,50  L 60,30 L 55,25 Z";
 
 		/*bnr-carousel*/
 		if( $(".bnr-carousel .carousel-items figure").length ){
@@ -203,7 +203,7 @@
 				imagesLoaded: true,
 				autoPlay: 6000,
 				pauseAutoPlayOnHover: true,
-				arrowShape: "M 30,50 L 55,75 L 60,70 L 40,50  L 60,30 L 55,25 Z",
+				arrowShape: arrowStyle,
 				initialIndex: 0,
 				friction: 0.5,
 				//selectedAttraction: 1,
@@ -239,26 +239,26 @@
 							prevNextButtons: false,
 							cellAlign: "center",
 							bgLazyLoad: 1,
-							//friction: 1,
-							//selectedAttraction: 1,
-							initialIndex: 1,
+							friction: 1,
+							selectedAttraction: 1,
+							initialIndex: 0,
 							draggable: false,
-							contain: true,
+							//contain: true,
 							pageDots: false
 						});
 					var flkty = crs.data("flickity");
 
 					$(carouselNav).eq(i).flickity({
 						imagesLoaded: true,
-						initialIndex: 1,
+						initialIndex: 0,
 						asNavFor: $(carouselMain)[i],
-						prevNextButtons: false,
+						prevNextButtons: true,
 						draggable: true,
 						percentPosition: true,
 						//wrapAround: true,
 						cellAlign: "center",
-						adaptiveHeight: true,
-						//contain: true,
+						//adaptiveHeight: true,
+						contain: true,
 						pageDots: false
 					});
           $("[data-fancybox]").fancybox({
@@ -380,13 +380,13 @@
 
 		var tl = new TimelineMax();
 		tl.pause();
-			tl.to('.menudrop', .3, {
-					top:0,
-					right: 0,
-					width:"100%",
-					borderRadius: "0 0 0 0",
-					ease: Power4.easeOut
-			})
+		tl.to('.menudrop', .3, {
+				top:0,
+				right: 0,
+				width:"100%",
+				borderRadius: "0 0 0 0",
+				ease: Power4.easeOut
+		})
 		tl.to('menu ul li:nth-child(1)', .5, {
 			  opacity:1,
 					y:0,
