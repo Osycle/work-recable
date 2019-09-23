@@ -299,8 +299,14 @@
 
     })();
 
-
-    
+    // Проверка на заполненность
+    $(".form-control").on("keyup", function(){
+    	var that = $(this);
+    	if( that.val().length )
+    		that.addClass("filled")
+    	else
+    		that.removeClass("filled");
+    })
 
 
 

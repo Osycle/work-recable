@@ -80,7 +80,6 @@ small{
 .entry-header{
 	p{
 		line-height: 170%;
-		font-size: em(18);
 	}
 	b{
 		font-weight: 900;
@@ -685,7 +684,7 @@ figcaption{
 			//margin: auto;
 			counter-reset: item-cell;
 			.img{
-				filter: brightness(60%);
+				filter: brightness(50%);
 				transition: all 0.3s ease;
 			}
 			.carousel-cell{
@@ -876,11 +875,40 @@ figcaption{
 .vacancies{
 	.entry-header{
 		text-align: center;
+		position: relative;
 		p{
+			font-weight: 700;
 			text-transform: uppercase;
 			color: $color-1;
 		}
 	}
+	.btn-content{
+		font-size: 0.8em;
+		text-align: center;
+		.btn-icon{
+			width: 100%;
+	  	justify-content: center;
+	  	display: flex;
+			a{
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+	  	i{
+				padding-left: 10px;
+				margin-right: -10px;
+	  	}
+			&.left{
+				i{
+					padding-left: 0;
+					margin-right: 0;
+					margin-left: -10px;
+					padding-right: 10px;
+					font-size: 20px;
+				}
+			}
+		}
+	}
+
 	.viewnamefile{
 		padding-left: 0;
 		background-color: transparent;
@@ -919,7 +947,7 @@ figcaption{
 			}
 		}
 		.pane-wrapper{
-			max-height: 70vh;
+			max-height: 58vh;
 			position: relative;
 			overflow-y: auto;
 		}
@@ -927,15 +955,18 @@ figcaption{
 }
 .vacancies-leftbar{
 	li{
-		margin: 15px 0;
+		
 		&:nth-child(1){
 			margin-top: 10px;
 		}
+		&:not(:last-child){
+			border-bottom: 1px solid $color-gray-2;
+		}
 		&.active{
 			a{
-				background-color: $color-1;
+				@extend .bgshadow-1;
 				color: white;
-				box-shadow: 0 0 20px -2px rgba($color-1, 0.5);
+				
 			}
 		}
 	}
@@ -943,8 +974,9 @@ figcaption{
 		transition: all 0.3s ease;
 		padding: 15px 20px;
 		min-height: 75px;
-		border-radius: 5px;
-		border: 1px solid $color-gray-1;
+		background-color: white;
+		color: black;
+		text-transform: uppercase;
 		font-weight: 600;
 		display: flex;
 		align-items: center;
@@ -976,3 +1008,95 @@ figcaption{
 
 
 
+//short-contacts
+.short-contacts{
+	.flex-wrapper{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.contacts-map{
+		overflow: visible;
+		.contacts-info{
+			background-color: white;
+			@extend .shadow-def;
+			position: absolute;
+			bottom: 25px;
+			right: 0;
+			color: black;
+			padding: 15px;
+			@media (min-width: 992px){
+				margin-right: -25px;	
+			}
+		}
+		.info-item{
+			display: flex;
+			align-items: center;
+			height: 50px;
+			width: 360px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			&>div{
+				display: flex;
+				align-items: center;
+			}
+			i{
+				min-width: 50px;
+				font-size: 20px;
+				max-width: 50px;
+				height: 50px;
+				display: inline-block;
+				background-color: $color-1;
+				color: black;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+    		margin-left: -40px;
+    		margin-right: 15px;
+			}
+		}
+	}
+	.wrapper{
+		width: 100%;
+	}
+	.form-def{
+		max-width: none;
+		background-color: transparent;
+		min-width: auto;
+		font-size: 0.95em;
+		.btn-def{
+			a, button{
+				padding-top: 5px;
+				padding-bottom: 5px;
+				height: 40px;
+			}
+		}
+		textarea{
+			height: 105px;
+		}
+		.entry-header{
+			h1{
+				font-family: $font-family-1;
+				margin-bottom: 5px;
+			}
+			p{
+				line-height: 130%;
+			}
+		}
+		@media (min-width: 991px){
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+}
+.contacts-map{
+	overflow: hidden;
+	.map-canvas{
+		height: 100vh;
+		width: 100%;
+		color: black;
+		@media (max-width: 991px) {
+			height: 220px;
+			width: 100%;
+		}
+	}
+}

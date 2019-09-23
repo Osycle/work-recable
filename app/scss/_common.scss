@@ -19,7 +19,7 @@ $color-scroll: $color-1;
 $color-footer: #0071BC;
 
 $color-gray-1: #f6f6f6; //#bdbdbd
-$color-gray-2: #f9f9f9;
+$color-gray-2: #e9e9e9;
 $color-gray-3: #9b9b9b;
 $color-gray-4: #666666;
 $color-gray-5: #1f1f1f;
@@ -668,6 +668,9 @@ table {
 		}
 	}
 }
+button{
+	text-transform: inherit;
+}
 
 .bgshadow-1{
 	background: linear-gradient(to top, #e09108, $color-1);
@@ -867,23 +870,23 @@ body{
 	}
 }
 
-:hover{
-	cursor: url('../img/other/cursor-default-2.png'), default;
-}
-a, [role="button"], button{
-	&:hover{
-		&, *{
-			cursor: pointer;
-		}
-	}
-}
-input, textarea{
-	&:hover{
-		&, *{
-			cursor: text;
-		}
-	}
-}
+// :hover{
+// 	cursor: url('../img/other/cursor-default-2.png'), default;
+// }
+// a, [role="button"], button{
+// 	&:hover{
+// 		&, *{
+// 			cursor: url('../img/other/cursor-pointer-2.png'), pointer;
+// 		}
+// 	}
+// }
+// input, textarea{
+// 	&:hover{
+// 		&, *{
+// 			cursor: text;
+// 		}
+// 	}
+// }
 
 
 p, li, ul, menu{

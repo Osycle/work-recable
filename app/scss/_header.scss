@@ -412,9 +412,6 @@ $header-min-menu: 70px;
 	margin-left: auto;
 	//margin-right: 25px;
 	display: inline-block;
-	&:hover{
-		cursor: pointer;
-	}
 	&.bar-close{
 		.icon-bar{
 			transform-origin: center;
@@ -458,17 +455,20 @@ $header-min-menu: 70px;
 }
 
 .form-control{
-	border-radius: 10px;
 	&:focus, &:active, &{
 		box-shadow: none;
 	}
 	resize: none;
 	border-width: 0px;
-	background-color: $color-gray-3;
-	border-color: rgba($color-1, 0.3);
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid rgba(white, 0.3);
 }
 textarea.form-control{
 	height: 150px;
+	border: none;
+	color: white;
+	background-color: rgba(white, 0.2);
 }
 
 
@@ -569,6 +569,7 @@ textarea.form-control{
 	}
 	.bar{
 		.icon-bar{
+			transition: all 0.3s ease;
 			&:nth-child(2){
 				width: 75%;
 			}
@@ -577,6 +578,11 @@ textarea.form-control{
 	.text{
 		padding-right: 20px;
 		font-size: 1em;
+	}
+	&:hover{
+		.icon-bar{
+			width: 100% !important;
+		}
 	}
 }
 
@@ -602,24 +608,53 @@ textarea.form-control{
 
 
 .form-def{
-	background-color: $color-3;
+	background-color: $color-2;
 	color: white;
 	overflow: visible;
 	max-width: 370px;
 	@media (min-width: 992px){
-		max-width: 470px;
+		min-width: 700px;
 	}
-	h2{
-		font-size: em(18);
-		text-transform: uppercase;
+	.entry-header{
+		padding: 10px 30px;
+	}
+	h1{
+		font-family: $font-family-2;
+		font-weight: 800;
+	}
+	label{
+		position: relative;
+	}
+	.label-placeholder{
+		position: absolute;
+		font-style: italic;
+		left: 40px;
+		top: -10px;
+		opacity: 0.5;
+		font-weight: 300;
+		transition: all 0.3s ease;
+		transform: translateY(120%);
+		pointer-events: none;
 	}
 	input{
+		background-color: transparent;
+		border: none;
+		border-bottom: 1px solid rgba(white, 0.3);
+		color: white;
+		font-style: italic;
 		&:focus{
 			border-color: rgba($color-3, 0.5);
+			&~.label-placeholder{
+				transform: translateY(0%);
+				opacity: 1;
+			}
+			&~i{
+				color: $color-1;
+			}
 		}
 	}
 	.fancybox-close-small{
-		background: $gradient-1;
+		background: $color-1;
 		top: 10px;
 		width: 36px;
 		height: 36px;
@@ -632,10 +667,8 @@ textarea.form-control{
 	}
 	.form-content{
 		font-size: 0.9em;
-		text-align: center;
+		
 		padding: 10px 25px;
-		background-color: white;
-		color: black;
 	}
 }
 
