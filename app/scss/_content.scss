@@ -254,23 +254,37 @@ figcaption{
 
 //intro
 .intro{
-	height: 1080px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-image: url('../img/bg/bg-bnr.jpg');
-	align-items: center;
-	display: flex;
+
+	.entry-header{
+		h1{
+			color: $color-1;
+		}
+	}
+	.flex-adaptive{
+		@media (min-width: 992px){
+			margin-top: 75px;
+		}
+	}
 }
 .bnr-carousel{
 	$slider-height: 70vh;
-	padding-top: 15px;
-	padding-bottom: 15px;
 	position: relative;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
 	.flickity-viewport{
 		box-shadow: 0 0 15px -2px rgba(black, 0.5);
+	}
+	.flickity-prev-next-button{
+		left: auto;
+		right: 0;
+		bottom: 1px;
+		top: auto;
+		transform: none;
+		pointer-events: auto;
+		&.previous{
+			right: 45px;
+		}
 	}
 	figure{
 		overflow: hidden;
@@ -474,7 +488,10 @@ figcaption{
 	overflow: hidden;
 	.entry-header{
 		color: $color-gray-5;
-		margin-top: 5vh;
+		margin-top: 40px;
+		h1{
+			color: black;
+		}
 	}
 	.flex-wrapper{
 		align-items: flex-start;
@@ -594,6 +611,7 @@ figcaption{
 .short-productions{
 	 color: white;
 	 .container-fluid-page{
+	 	display: block !important;
 	 	@media (min-width: 991px){
 	 		padding-left: 120px;
 	 		padding-right: 120px;
@@ -616,6 +634,9 @@ figcaption{
 	}
 	.carousel-article{
 		padding-bottom: 0;
+		
+		
+		
 		@media (min-width: 992px){
 			margin-top: 5vh;
 		}
@@ -836,11 +857,7 @@ figcaption{
 	.slotholder{
 		position: absolute;
 	}
-	.container-fluid-page{
-		height: 100%;
-		display: flex;
-		align-items: center;
-	}
+
 	.tp-caption{
 		position: relative !important;
 	}
@@ -850,14 +867,20 @@ figcaption{
 	*{
 		white-space: normal;
 	}
-	.entry-header{
-		//top: 20vh !important;
-		h1{
-			color: $color-1;
 
+}
+.rev-slider{
+	.short-news, .short-productions, .vacancies{
+		.bg-wrapper{
+			display: none;
 		}
 	}
-
+	.contacts-map{
+		img{
+			width: auto !important;
+			height: auto !important;
+		}
+	}
 
 }
  
@@ -923,6 +946,10 @@ figcaption{
 	.tab-content{
 		@media (min-width: 991px){
 			padding-left: 60px;
+		}
+		li{
+			margin-bottom: 5px;
+			line-height: 100%;
 		}
 		.tab-pane{
 			color: black;
@@ -1057,6 +1084,8 @@ figcaption{
 	}
 	.wrapper{
 		width: 100%;
+		display: flex;
+		align-items: center;
 	}
 	.form-def{
 		max-width: none;

@@ -207,10 +207,10 @@
 				initialIndex: 0,
 				friction: 0.5,
 				//selectedAttraction: 1,
-				prevNextButtons: checkSm(),
+				prevNextButtons: true,
 				draggable: false,
 				wrapAround: true,
-				pageDots: true,
+				pageDots: false,
 				contain: false,
 				percentPosition: true,
 				cellSelector: 'figure',
@@ -218,7 +218,7 @@
 			});
 			bnrCarousel.data("flickity");
 
-			$(".bnr-carousel .carousel-items").append("<div class='container-arrows'></div>").find(".container-arrows").append($(".bnr-carousel .carousel-items .flickity-prev-next-button"))
+			//$(".bnr-carousel .carousel-items").append("<div class='container-arrows'></div>").find(".container-arrows").append($(".bnr-carousel .carousel-items .flickity-prev-next-button"))
 			//$(".bnr-carousel .container-arrows").append('<button class="flickity-prev-next-button previous" type="button" aria-label="previous"><svg viewBox="0 0 100 100"><path d="M 30,50 L 55,75 L 60,70 L 40,50  L 60,30 L 55,25 Z" class="arrow"></path></svg></button><button class="flickity-prev-next-button next" type="button" aria-label="next"><svg viewBox="0 0 100 100"><path d="M 30,50 L 55,75 L 60,70 L 40,50  L 60,30 L 55,25 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button>');
 
 
@@ -488,28 +488,35 @@
 	      shadow:0
 
 	    });
+			revslider.on("revolution.slide.onchange",function (e,data) {
+				if( data.slideIndex != 1 )
+					$("#header").addClass("sliding-hide");
+				else
+					$("#header").removeClass("sliding-hide");
+			});
+
 		function scrollPage(){
 	  	if( scrollDown )
 	  		revslider.revnext()
 	  	else
-	  		revslider.revnext()
+	  		revslider.revprev();
 	  }
 
 		window.scrollDown = false;
 		var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
 
-    $(window).bind(mousewheelevt, function(e){
+    $(".rev-slider").bind(mousewheelevt, function(e){
 	       
 		    var evt = window.event || e //equalize event object     
 		    evt = evt.originalEvent ? evt.originalEvent : evt; //convert to originalEvent if possible               
 		    var delta = evt.detail ? evt.detail*(-40) : evt.wheelDelta //check for detail first, because it is used by Opera and FF
 
-		    if( (delta > 0) && scrollDown ) {
+		    if( (delta > 0) ) {
 	       	console.log("up");
 		      scrollDown = false;
 		      scrollPage();
 		    }
-		    else if( (delta < 0) && !scrollDown){
+		    else if( (delta < 0) ){
 	       	console.log("down");
 	       	scrollDown = true;
 	       	scrollPage();

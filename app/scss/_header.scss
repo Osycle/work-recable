@@ -15,13 +15,18 @@ $header-min-menu: 70px;
 	left: 0;
 	position: fixed;
 	//position: relative;
-	pointer-events: none;
 	//font-family: $font-family-1;
 	&:not([class*="bg-color"]){
 		background-color: transparent;
 	}
+	pointer-events: none;
 	*{
-		pointer-events: auto;
+		pointer-events: none;
+		.header-top-content{
+			*{
+				pointer-events: auto !important;
+			}
+		}
 	}
 	@media (max-width: 991px){
 		//position: fixed;
@@ -107,6 +112,13 @@ $header-min-menu: 70px;
 		width: 267px;
 	}
 }
+.header-top-content{
+	.header-info{
+		@media (min-width: 992px){
+			width: 45%;
+		}
+	}
+}
 .header-info{
 	i,span{
 		display: inline-block;
@@ -118,6 +130,9 @@ $header-min-menu: 70px;
 	@media (min-width: 991px){
 		margin-left: 14%;
 	}
+}
+.header-info, .header-logo{
+	transition: all 0.5s ease 0.2s;
 }
 .header-address{
 	.icm{
@@ -167,7 +182,11 @@ $header-min-menu: 70px;
 	}
 }
 
-
+.sliding-hide{
+	.header-logo, .header-info{
+		transform: scale(0);
+	}
+}
 
 .socicons{
 	font-size: 14px;
@@ -475,6 +494,8 @@ textarea.form-control{
 
 
 //search nav
+
+
 .search-nav-content, .input-btnin{
 
 	.fa{
