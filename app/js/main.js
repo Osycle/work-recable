@@ -76,8 +76,8 @@
 			loop: false,
 			center: true,
 			responsive:{
-				0:{items:4},
-				991:{items:4},
+				0:{items:1},
+				991:{items:3},
 				1199:{items:4},
 				1420:{items:4}
 			},
@@ -88,7 +88,8 @@
 		var deconOwlItem = undefined;
 		var owlItemWidth = undefined;
 		newsOwl.on('changed.owl.carousel', function(event) {
-
+			if( checkSm() )
+				return;
     	setTimeout(function(){
 	    	var itemCenter = newsOwl.find(".center");
 	    	if( deconOwlItem ){
@@ -236,7 +237,7 @@
 						.eq(i)
 						.flickity({
 							imagesLoaded: true,
-							prevNextButtons: false,
+							prevNextButtons: checkSm(),
 							cellAlign: "center",
 							bgLazyLoad: 1,
 							friction: 1,
@@ -422,8 +423,10 @@
 
 
 
-
-	   window.revslider = $(".rev-slider").revolution({
+		if( !checkSm() ){
+			if( !$(".rev-slider").length )
+				return;
+	  	window.revslider = $(".rev-slider").revolution({
 				delay:9999999999999,
 			//startwidth:"100vw",
 				startheight: $( window ).height(),
@@ -495,35 +498,35 @@
 					$("#header").removeClass("sliding-hide");
 			});
 
-		function scrollPage(){
-	  	if( scrollDown )
-	  		revslider.revnext()
-	  	else
-	  		revslider.revprev();
-	  }
+			function scrollPage(){
+		  	if( scrollDown )
+		  		revslider.revnext()
+		  	else
+		  		revslider.revprev();
+		  }
 
-		window.scrollDown = false;
-		var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
+			window.scrollDown = false;
+			var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
 
-    $(".rev-slider").bind(mousewheelevt, function(e){
-	       
-		    var evt = window.event || e //equalize event object     
-		    evt = evt.originalEvent ? evt.originalEvent : evt; //convert to originalEvent if possible               
-		    var delta = evt.detail ? evt.detail*(-40) : evt.wheelDelta //check for detail first, because it is used by Opera and FF
+	    $(".rev-slider").bind(mousewheelevt, function(e){
+		       
+			    var evt = window.event || e //equalize event object     
+			    evt = evt.originalEvent ? evt.originalEvent : evt; //convert to originalEvent if possible               
+			    var delta = evt.detail ? evt.detail*(-40) : evt.wheelDelta //check for detail first, because it is used by Opera and FF
 
-		    if( (delta > 0) ) {
-	       	console.log("up");
-		      scrollDown = false;
-		      scrollPage();
-		    }
-		    else if( (delta < 0) ){
-	       	console.log("down");
-	       	scrollDown = true;
-	       	scrollPage();
-		    }   
+			    if( (delta > 0) ) {
+		       	console.log("up");
+			      scrollDown = false;
+			      scrollPage();
+			    }
+			    else if( (delta < 0) ){
+		       	console.log("down");
+		       	scrollDown = true;
+		       	scrollPage();
+			    }   
 
-    });
-
+	    });
+	   }
 	});
 })(jQuery);
 

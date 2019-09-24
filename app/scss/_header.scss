@@ -36,6 +36,9 @@ $header-min-menu: 70px;
 		margin-top: 5px;
 		margin-bottom: 5px;
 	}
+	&.hovered{
+		position: relative;
+	}
 }
 
 .header-hidden{
@@ -169,7 +172,7 @@ $header-min-menu: 70px;
 		}
 		.header-top{
 			border-bottom-width: 0;
-			//background-color: $color-2;
+			background-color: $color-2;
 		}
 		.header-top-content{
 			overflow: hidden;
@@ -249,19 +252,25 @@ $header-min-menu: 70px;
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: left 0;
+		@media (max-width: 991px){
+			display: none;	
+		}
 		
 	}
 	.bar{
 		height: 60px;
 		position: absolute;
-		right: 60px;
-		top: 20px;
+		right: 3%;
+		top: 2%;
 	}
 	.menudrop-wrapper{
 		width: 100%;
 	}
 	.header-info-wrapper{
 		position: inherit;
+		@media (max-width: 991px) {
+			display: none;
+		}
 	}
 	.header-info{
 		width: 360px;
@@ -293,6 +302,9 @@ $header-min-menu: 70px;
 		margin-left: 350px;
 		width: 360px;
     margin: auto;
+    @media (max-width: 991px){
+    	text-align: center;
+    }
 	}
 	menu{
 		margin:0 auto;
@@ -368,6 +380,7 @@ $header-min-menu: 70px;
 	}
 	.min-menu-bar{
 		padding: 5px 0;
+		padding-top: 12px;
 		.bar{
 			transform: scale(0.8);
 		}

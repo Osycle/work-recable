@@ -216,9 +216,8 @@ figcaption{
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-image: url('../img/bg/bg-body.jpg');
-	background-color: white;
-	background-repeat: repeat-y;
+	background-image: url('../img/bg/vacancies-bg-2.jpg');
+	background-repeat: no-repeat;
 	//display: none;
 	z-index: -1;
 	pointer-events: none;
@@ -356,14 +355,7 @@ figcaption{
 }
 
 
-.flex-wrapper{
-	display: flex;
-	align-items: center;
-	height: 100vh;
-	position: relative;
-	padding-left: 15px;
-	padding-right: 15px;
-}
+
 .bg-wrapper{
 	width: 100%;
 	height: 100%;
@@ -390,7 +382,13 @@ figcaption{
 		right: 0;
 		z-index: -1;
 	}
-
+	.left-content{
+		@media(min-width: 992px){
+			.link-modal-yt{
+				display: none;
+			}
+		}
+	}
 	.entry-header{
 		position: relative;
 		.link-content{
@@ -493,15 +491,12 @@ figcaption{
 			color: black;
 		}
 	}
-	.flex-wrapper{
-		align-items: flex-start;
-	}
 	.bg-wrapper{
 		z-index: -1;
 	}
 }
 .short-news-items{
-	margin-top: 4vh;
+	
 	figure{
 		position: relative;
 	}
@@ -525,14 +520,17 @@ figcaption{
 			padding-right: 10px;
 		}
 	}
-	.owl-stage-outer{
-		overflow: visible;
-	}
-	.owl-stage{
-		white-space: nowrap;
-		display: flex;
-		*{
-			white-space: normal;
+	@media (min-width: 991px){
+		margin-top: 4vh;
+		.owl-stage-outer{
+			overflow: visible;
+		}
+		.owl-stage{
+			white-space: nowrap;
+			display: flex;
+			*{
+				white-space: normal;
+			}
 		}
 	}
 	.owl-item{
@@ -613,8 +611,8 @@ figcaption{
 	 .container-fluid-page{
 	 	display: block !important;
 	 	@media (min-width: 991px){
-	 		padding-left: 120px;
-	 		padding-right: 120px;
+	 		padding-left: 5%;
+	 		padding-right: 5%;
 	 	}
 	 }
 	.entry-header{
@@ -634,8 +632,6 @@ figcaption{
 	}
 	.carousel-article{
 		padding-bottom: 0;
-		
-		
 		
 		@media (min-width: 992px){
 			margin-top: 5vh;
@@ -672,7 +668,10 @@ figcaption{
 				.btn-content{
 					transition-delay: 0.55s;
 				}
-
+				@media (max-width: 991px) {
+					height: auto;
+					margin-top: 0;
+				}
 			}
 			.img-content{
 				transform: scale(0.85);
@@ -685,6 +684,9 @@ figcaption{
 			.img{
 				background-size: cover;
 				height: 42vh;
+				@media (max-width: 991px) {
+					height: 210px;
+				}
 			}
 		}
 		.flickity-prev-next-button{
@@ -843,6 +845,40 @@ figcaption{
 }
 
 
+
+.flex-wrapper{
+	display: flex;
+	align-items: center;
+	height: auto;
+	position: relative;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.rev-slider{
+	.flex-wrapper{
+		display: flex;
+		align-items: center;
+		height: 100vh;
+		position: relative;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.short-news, .short-productions, .vacancies{
+		.bg-wrapper{
+			display: none;
+		}
+	}
+	.contacts-map{
+		img{
+			width: auto !important;
+			height: auto !important;
+		}
+	}
+
+}
 .fullscreen-container {
 	width:100%;
 	position:relative;
@@ -869,23 +905,6 @@ figcaption{
 	}
 
 }
-.rev-slider{
-	.short-news, .short-productions, .vacancies{
-		.bg-wrapper{
-			display: none;
-		}
-	}
-	.contacts-map{
-		img{
-			width: auto !important;
-			height: auto !important;
-		}
-	}
-
-}
- 
-
-
 
 
 
@@ -897,7 +916,6 @@ figcaption{
 //vacancies
 .vacancies{
 	.entry-header{
-		text-align: center;
 		position: relative;
 		p{
 			font-weight: 700;
@@ -1040,9 +1058,12 @@ figcaption{
 	.flex-wrapper{
 		padding-left: 0;
 		padding-right: 0;
+		padding-top: 0;
+		padding-bottom: 0;
 	}
 	.contacts-map{
 		overflow: visible;
+		height: 730px;
 		.contacts-info{
 			background-color: white;
 			@extend .shadow-def;
@@ -1084,6 +1105,7 @@ figcaption{
 	}
 	.wrapper{
 		width: 100%;
+		height: 100%;
 		display: flex;
 		align-items: center;
 	}
@@ -1120,12 +1142,156 @@ figcaption{
 .contacts-map{
 	overflow: hidden;
 	.map-canvas{
-		height: 100vh;
+		height: 100%;
+		max-height: 100%;
 		width: 100%;
 		color: black;
 		@media (max-width: 991px) {
 			height: 220px;
 			width: 100%;
 		}
+	}
+}
+@media (max-width: 991px) {
+	.flex-wrapper{
+		height: auto;
+		padding-top: 20px;
+	}
+	.bg-wrapper{
+		.img{
+			width: 100%;
+		}
+	}
+	.bnr-carousel{
+		figure{
+			height: auto;
+			.img{
+				position: relative;
+				height: 210px;
+			}
+		}
+	}
+	.intro{
+		.bnr-slider{
+			width: 100%;
+		}
+		.btn-content{
+			.btn-opacity, .btn-def{
+				width: 200px;
+				margin-bottom: 5px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				a{
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+			}
+			span{
+				display: inline-block;
+			}
+		}
+	}
+
+	.short-about{
+		.bg-wrapper{
+			.link-modal-yt{
+				display: none;
+			}
+			
+		}
+		.link-modal-yt{
+			top: auto;
+			position: relative;
+			width: 100%;
+			margin-top: 15px;
+			transform: none;
+			margin-bottom: 30px;
+			display: block;
+			bottom: 0;
+			a{
+				margin-left: auto;
+				margin-right: auto;
+				
+			}
+		}
+	}
+	.short-news{
+		.entry-header{
+			margin-bottom: 30px;
+			h1{
+				color: white;
+			}
+		}
+		.bg-wrapper{
+			display: none;
+		}
+		.short-news-items{
+			.img-content{
+				width: 100%;
+				&:before{
+					display: none;
+				}
+			}
+			.desc-content{
+				transform: none;
+				position: relative;
+				background-color: transparent;
+				h3{
+					font-size: 1.2em;
+				}
+				p{
+					width: 100%;
+					display: none;
+				}
+			}
+			.date-content{
+				transform: none;
+			}
+			.img{
+				height: 250px;
+			}
+		}
+	}
+	.short-productions{
+		.carousel-main{
+			p{
+				display: none;
+			}
+			.flickity-prev-next-button{
+				background-color: $color-1;
+				top: auto;
+				bottom: 0;
+				transform: none;
+			}
+		}
+		.carousel-nav{
+			display: none;
+		}
+	}
+	.short-contacts{
+		padding-bottom: 30px;
+	}
+	html{
+		#footer{
+			position: relative;
+			background-color: $color-2;
+		}
+		.footer-other{
+			width: 100%;
+		}
+	}
+}
+
+
+
+
+//bnr-article
+.bnr-article{
+	position: relative;
+	.entry-header{
+		padding: 15px 0;
+		padding-bottom: 50px;
 	}
 }

@@ -187,7 +187,7 @@ $gradient-1: linear-gradient(to bottom right, $color-2, $color-3);
 		--BREADCRUMP--
 */
 .breadcrumb-container{
-	background-color: $color-gray-1;
+	background-color: transparent;
 	.lang{
 		padding: 10px 0;
 		margin: 20px 0;
@@ -202,6 +202,7 @@ $gradient-1: linear-gradient(to bottom right, $color-2, $color-3);
 	z-index: 1;
 	position: relative;
 	font-weight: 500;
+	background-color: transparent;
 	@media (min-width: 992px) {
 		margin-top: 20px;
 	}
@@ -221,11 +222,11 @@ $gradient-1: linear-gradient(to bottom right, $color-2, $color-3);
 	}
 	.active{
 		a{
-			color: #4c4c4c;
+			color: white;
 		}
 	}
 	& > li + li:before{
-		color: #4c4c4c;
+		color: white;
 		//font-family: FontAwesome;
 		content: "/";
 		font-weight: normal;
@@ -978,12 +979,12 @@ h1, h2, h3, h4{
 	position: relative;	
 }
 h1{
-	font-size: em(36);
+	font-size: em(42);
 	margin-bottom: 15px;
 	font-weight: 600;
 	line-height: 120%;
 	@media (max-width: 991px) {
-		font-size: em(26);
+		font-size: em(30);
 	}
 }
 h2{
