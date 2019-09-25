@@ -391,14 +391,14 @@ html{
 /* ---- .grid-item ---- */
 
 .grid-img-item {
-  width: #{(100/5) + "%"};
+  width: #{(100/3) + "%"};
   float:left;
   img{
   	width: 100%;
   }
 }
 .grid-img-sizer{
-	width: #{(100/4) + "%"};
+	width: #{(100/3) + "%"};
 }
 .grid-img-item {
   //float: left;
@@ -549,6 +549,18 @@ div.owl-nav{
 		}
 		.owl-dots{
 			padding: 5px 15px;
+		}
+	}
+}
+.owl-nav-style-2{
+	@extend .owl-nav-style-1;
+	.owl-nav{
+		position: absolute;
+		@extend .trans-v-center;
+		justify-content: space-between;
+		pointer-events: none;
+		*{
+			pointer-events: auto;
 		}
 	}
 }

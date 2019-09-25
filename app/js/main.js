@@ -49,20 +49,20 @@
 
 
 
-		// $(".short-logotypes-items.owl-carousel").owlCarousel({
-		// 	nav: true,
-		// 	//items: 3,
-		// 	dots: false,
-		// 	dotsEach: true,
-		// 	autoplay: true,
-		// 	touchDrag: false,
-		// 	responsive:{
-		// 		0:{items:1},
-		// 		991:{items:5}
-		// 	},
-		// 	navText : owlBtn,
-		// 	margin: 30
-		// });
+		$(".certifications-items.owl-carousel").owlCarousel({
+			nav: true,
+			//items: 3,
+			dots: false,
+			dotsEach: true,
+			autoplay: true,
+			touchDrag: checkSm(),
+			responsive:{
+				0:{items:1},
+				991:{items:4}
+			},
+			navText : owlBtn,
+			margin: 30
+		});
 
 
 		/* short-news owl carousel*/
@@ -421,6 +421,71 @@
 			},'-=0.3')
 
 
+		window.preLoader = {
+		  preBox: ".pre-box",
+		  enter: false,
+		  status: $(".pre-box").hasClass("in"),
+
+		  preToggle: function(bool, func) {
+		    var endtime = 600;
+		    if (!this.enter) return;
+		    if (typeof func === "function")
+		      setTimeout(function() {
+		        func();
+		      }, endtime);
+		    var preBox = $(this.preBox);
+
+		    bool || this.status ?
+		      preBox.removeClass("in").setTimeout(function() {
+		        $(preBox).hide();
+		      }, endtime) :
+		      preBox
+		      .show()
+		      .addClass("in")
+		      .find(".box-content");
+
+		    return (this.status = !this.status);
+		  },
+
+		  preImg: function(img) {
+		  	console.log("sdsd");
+		    var images = img || document.images,
+		      imagesTotalCount = images.length,
+		      imagesLoadedCount = 0,
+		      preloadPercent = $(".percent").text("0 %");
+
+		    if (imagesTotalCount == 0) {
+		      preOnload();
+		      $(preloadPercent).text("100 %");
+		    }
+
+		    for (var i = 0; i < imagesTotalCount; i++) {
+		      var image_clone = new Image();
+		      image_clone.onload = image_loaded;
+		      image_clone.onerror = image_loaded;
+		      image_clone.src = images[i].src;
+		    }
+
+		    function preOnload() {
+
+		      onLoaded();
+		    }
+
+		    function image_loaded() {
+		      imagesLoadedCount++;
+
+		      var per = (100 / imagesTotalCount * imagesLoadedCount) << 0;
+
+		      setTimeout(function() {
+		        //console.log(per);
+		        $(preloadPercent).text(per + "%");
+		      }, 1);
+
+		      if (imagesLoadedCount >= imagesTotalCount) preOnload();
+		    }
+		  }
+		};
+		preLoader.preImg();
 
 
 		if( !checkSm() ){
@@ -428,7 +493,7 @@
 				return;
 	  	window.revslider = $(".rev-slider").revolution({
 				delay:9999999999999,
-			//startwidth:"100vw",
+				//startwidth:"100vw",
 				startheight: $( window ).height(),
 				autoHeight:"off",
 				fullScreenAlignForce:"off",
@@ -526,7 +591,22 @@
 			    }   
 
 	    });
-	   }
+	  } // end if
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	});
 })(jQuery);
 
@@ -550,10 +630,11 @@ setTimeout(function() {
 	};
 }, 10);
 
-document.addEventListener('copy', function(e){
-  e.preventDefault(); // default behaviour is to copy any selected text
-  e.clipboardData.setData('text/plain', '');
-});
+/*Отмена копирования*/
+// document.addEventListener('copy', function(e){
+//   e.preventDefault(); // default behaviour is to copy any selected text
+//   e.clipboardData.setData('text/plain', '');
+// });
 
 
 

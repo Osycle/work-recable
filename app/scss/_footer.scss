@@ -20,7 +20,23 @@
 	z-index: 1;
 	font-size: 0.9em;
 	pointer-events: none;
-
+	&.relative{
+		position: relative;
+		bottom: 0;
+		background-color: $color-3;
+		.footer-content{
+			height: 80px;
+			@media (max-width: 991px){
+				height: auto;
+				flex-direction: column;
+				padding-top: 15px;
+				padding-bottom: 10px;
+				[class*="col-md-"]{
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
 	p, ul{
 		*{
 			pointer-events: auto;
