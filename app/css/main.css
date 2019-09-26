@@ -10991,6 +10991,129 @@ div.owl-nav .owl-prev, div.owl-nav .owl-next {
     -ms-transform-origin: 0 0;
     transform-origin: 0 0; }
 
+.preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  background: #17202f;
+  opacity: 1;
+  margin: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .preloader img {
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .preloader img:nth-child(2) {
+      opacity: 0.1;
+      -webkit-filter: blur(2px);
+      filter: blur(2px);
+      -webkit-transform: matrix(1, 0, 0, -1, 0, 0) scaleY(1);
+      -ms-transform: matrix(1, 0, 0, -1, 0, 0) scaleY(1);
+      transform: matrix(1, 0, 0, -1, 0, 0) scaleY(1); }
+  .preloader .loader {
+    text-align: center;
+    color: white; }
+    .preloader .loader span {
+      text-align: center;
+      display: block; }
+    .preloader .loader .img-content {
+      position: relative;
+      width: 400px; }
+    .preloader .loader .textfiller {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1em;
+      position: relative;
+      display: inline-block;
+      font-family: "TT Norms";
+      color: #ddaa1c;
+      font-style: italic; }
+      .preloader .loader .textfiller .text-shadow {
+        display: inline-block;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        position: absolute;
+        background-color: rgba(23, 32, 47, 0.5);
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0; }
+    .preloader .loader .percent {
+      font-size: 15px;
+      margin-top: 15px;
+      padding-left: 10px;
+      font-weight: 700; }
+    .preloader .loader svg {
+      width: 450px;
+      height: 450px;
+      left: 50%;
+      top: 50%;
+      margin-top: -225px;
+      margin-left: -225px;
+      position: absolute; }
+      .preloader .loader svg circle {
+        -webkit-transition: all 0.225s ease-in-out;
+        -o-transition: all 0.225s ease-in-out;
+        transition: all 0.225s ease-in-out;
+        stroke-dashoffset: 0;
+        stroke-dasharray: 0;
+        fill: transparent;
+        stroke: white;
+        stroke-width: 0px;
+        r: 200;
+        cx: 225;
+        cy: 225; }
+
+.svg-animate {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  bottom: 0; }
+  .svg-animate .cable-1 {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    -webkit-transform: scale(3);
+    -ms-transform: scale(3);
+    transform: scale(3); }
+    .svg-animate .cable-1 .path {
+      stroke-dasharray: 230%;
+      stroke-dashoffset: 270%; }
+  .svg-animate .cable-2 {
+    left: 0;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    top: 0;
+    position: absolute;
+    margin-top: -110px; }
+    .svg-animate .cable-2 .path {
+      stroke-dasharray: 410%;
+      stroke-dashoffset: 390%; }
+  .svg-animate .path {
+    stroke: #283751;
+    -webkit-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+    fill: none;
+    stroke-width: 110px; }
+
 /*
 		_media.scss	
 */

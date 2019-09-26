@@ -624,3 +624,143 @@ div.owl-nav{
     transform-origin: 0 0;
 	}
 }
+
+
+
+
+
+// PRELODER
+.preloader{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  background: $color-2;
+  opacity: 1;
+  margin: auto;
+  //transition: all 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img{
+  	//width: 100%;
+  	//opacity: 0;
+  	transition: all 0.3s ease-in-out;
+  	&:nth-child(2){
+  		opacity: 0.1;
+  		filter: blur(2px);
+  		transform: matrix(1, 0, 0, -1, 0, 0) scaleY(1);
+  	}
+  }
+	// &.in{
+	// 	pointer-events: none;
+	// 	opacity: 0;
+	// }
+	.loader{
+		//transform: scale(0.5);
+		text-align: center;
+		color: white;
+		span{
+			text-align: center;
+			display: block;
+		}
+		.img-content{
+			position: relative;
+			width: 400px;
+			//padding-bottom: 35px;
+			//display: none;
+		}
+		.textfiller{
+			margin-top: 30px;
+			text-align: center;
+			font-size: em(16);
+			position: relative;
+			display: inline-block;
+			font-family: $font-family-1;
+			color: $color-1;
+			font-style: italic;
+			.text-shadow{
+				display: inline-block;
+				transition: all 1s ease;
+				position: absolute;
+				background-color: rgba($color-2, 0.5);
+				height: 100%;
+				width: 100%;
+				left: 0;
+				top: 0;
+			}
+		}
+		.percent{
+			font-size: 15px;
+			margin-top: 15px;
+			//display: none;
+			padding-left: 10px;
+			font-weight: 700;
+		}
+		svg{
+			width: 450px;
+			height: 450px;
+			left: 50%;
+			top: 50%;
+			margin-top: -225px;
+			margin-left: -225px;
+			circle{
+				transition: all 0.225s ease-in-out;
+				stroke-dashoffset: 0;
+				stroke-dasharray: 0;
+				fill: transparent;
+				stroke: white;
+				stroke-width: 0px;
+				r: 200;
+				cx: 225;
+				cy: 225;
+			}
+			position: absolute;
+		}
+	}
+
+}
+
+
+
+
+
+.svg-animate{
+	position: absolute;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	.cable-1{
+		right: 0;
+		bottom: 0;
+		position: absolute;
+		transform: scale(3);
+		.path{
+	    stroke-dasharray: 230%;
+	    stroke-dashoffset: 270%;
+		}
+	}
+	.cable-2{
+		left: 0;
+		transform: scale(1.1);
+		top: 0;
+		position: absolute;
+		margin-top: -110px;
+		.path{
+	    stroke-dasharray: 410%;
+	    stroke-dashoffset: 390%;
+		}
+	}
+	svg{
+	}
+	.path{
+    stroke: lighten($color-2, 10%);
+		transition: all 1s linear;
+		fill: none;
+		stroke-width: 110px;
+	}
+}

@@ -421,39 +421,44 @@
 			},'-=0.3')
 
 
+		//Прилоудер
 		window.preLoader = {
-		  preBox: ".pre-box",
-		  enter: false,
-		  status: $(".pre-box").hasClass("in"),
+		  preBox: "#prebox",
+		  enter: true,
+		  status: $("#prebox").hasClass("in"),
 
 		  preToggle: function(bool, func) {
+
 		    var endtime = 600;
-		    if (!this.enter) return;
+		    //if (!this.enter) return;
 		    if (typeof func === "function")
 		      setTimeout(function() {
 		        func();
 		      }, endtime);
 		    var preBox = $(this.preBox);
-
-		    bool || this.status ?
-		      preBox.removeClass("in").setTimeout(function() {
-		        $(preBox).hide();
-		      }, endtime) :
-		      preBox
-		      .show()
-		      .addClass("in")
-		      .find(".box-content");
-
+		    if (bool || this.status) {
+		    	setTimeout(function(){
+			      preBox.removeClass("in");
+		    	}, endtime)
+		     } else {
+			     	preBox
+			      	.show()
+			      	.addClass("in")
+			      	.find(".box-content");
+				      setTimeout(function() {
+					      $(preLoader.preBox).fadeOut();
+				      }, 1000);
+		     }
 		    return (this.status = !this.status);
+
 		  },
 
 		  preImg: function(img) {
-		  	console.log("sdsd");
 		    var images = img || document.images,
 		      imagesTotalCount = images.length,
 		      imagesLoadedCount = 0,
 		      preloadPercent = $(".percent").text("0 %");
-
+		      
 		    if (imagesTotalCount == 0) {
 		      preOnload();
 		      $(preloadPercent).text("100 %");
@@ -467,8 +472,8 @@
 		    }
 
 		    function preOnload() {
-
 		      onLoaded();
+		      //preLoader.preToggle();
 		    }
 
 		    function image_loaded() {
@@ -477,15 +482,18 @@
 		      var per = (100 / imagesTotalCount * imagesLoadedCount) << 0;
 
 		      setTimeout(function() {
-		        //console.log(per);
+		        console.log(per);
 		        $(preloadPercent).text(per + "%");
-		      }, 1);
+		        $(".text-shadow").css("left", per + "%")
+		        $(".svg-animate .path").css("stroke-dasharray", "+=" + (per*2) + "%");
+		      }, 500);
 
 		      if (imagesLoadedCount >= imagesTotalCount) preOnload();
 		    }
 		  }
 		};
 		preLoader.preImg();
+
 
 
 		if( !checkSm() ){
