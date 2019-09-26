@@ -364,8 +364,9 @@ $header-min-menu: 70px;
 	z-index: 100;
 	color: black;
 	box-shadow: 0 0 20px 0 black;
-	background-color: white;
+	background-color: $color-2;
 	font-size: 0.9em;
+	color: white;
 	.min-menu-logo{
 		padding: 12px 0;
 		width: 100%;
@@ -386,7 +387,8 @@ $header-min-menu: 70px;
 		}
 	}
 	.icon-bar{
-		background-color: black;
+		background-color: white;
+		
 	}
 }
 
