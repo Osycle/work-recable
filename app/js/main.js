@@ -485,14 +485,110 @@
 		        console.log(per);
 		        $(preloadPercent).text(per + "%");
 		        $(".text-shadow").css("left", per + "%")
-		        $(".svg-animate .path").css("stroke-dasharray", "+=" + (per*2) + "%");
-		      }, 500);
+		        $(".svg-animate .stroke-logo").css("stroke-dasharray", 9110 + (per * 91.1)+"" );
+		        if( per == 100 )
+		        	//$(".svg-animate .stroke-logo").css("stroke-width", "55px" );
+		        	setTimeout(function(){
+		        		$("#prebox").addClass("loaded");
+		        	}, 1600);
+		      }, 300);
 
 		      if (imagesLoadedCount >= imagesTotalCount) preOnload();
 		    }
 		  }
 		};
 		preLoader.preImg();
+
+
+
+
+
+
+
+		//if(top!=0){
+		//  body.animate({scrollTop:0}, '500');
+		//}
+
+	if( $("html").find(".index").length > 0 ){
+		$("body").addClass("ov-hidden");
+		setTimeout(function(){
+			$("html").animate({scrollTop:0 }, '0');
+		}, 500)
+
+		window.currentIndexBlock = 1;
+		window.scrollBlockLength = $("[data-scroll-block]").length;
+		window.stopScroll = false;
+		$("[data-scroll-block]").addClass("atom");
+		window.switchScroll = function (prevnext){
+			stopScroll = true;
+			if( !prevnext )
+				++currentIndexBlock;
+			else
+				--currentIndexBlock;
+			
+			if( scrollBlockLength <= currentIndexBlock || currentIndexBlock <= 0){
+				currentIndexBlock = 1;
+			}
+			if (currentIndexBlock == 1){
+				$("#header").removeClass("sliding-hide");
+			}else{
+				$("#header").addClass("sliding-hide");
+			}
+			console.log("currentIndexBlock", currentIndexBlock);
+
+				
+			var index = currentIndexBlock;
+			var currentBlock = $("[data-scroll-block]").eq(currentIndexBlock-1);
+			var currentBlockTop = currentBlock.offset().top // Get position of the body
+			var textPreload = currentBlock.attr("data-text-preload")
+
+			$("[data-scroll-block]").removeClass("is-selected");
+			currentBlock.addClass("is-selected");
+
+			$("#prebox").addClass("loadedstep");
+
+
+			$("#prebox .text-preload").text(textPreload);
+
+			setTimeout(function(){
+				$("html").animate({scrollTop:currentBlockTop }, '0');
+			}, 800)
+			setTimeout(function(){
+				$("#prebox").removeClass("loadedstep");
+			}, 1300)
+			setTimeout(function(){
+				stopScroll = false;
+			}, 2000)
+		}
+
+		var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
+    $("html").bind(mousewheelevt, function(e){
+		    var evt = window.event || e //equalize event object     
+
+		    evt = evt.originalEvent ? evt.originalEvent : evt; //convert to originalEvent if possible               
+		    var delta = evt.detail ? evt.detail*(-40) : evt.wheelDelta //check for detail first, because it is used by Opera and FF
+
+		    if( (delta > 0) ) {
+	       	console.log("up");
+	       	if( !stopScroll && currentIndexBlock > 1)
+	       		switchScroll(true);
+		    }
+		    else if( (delta < 0) ){
+	       	console.log("down");
+	       	if( !stopScroll )
+	       		switchScroll();
+		    }   
+
+    });
+	}
+
+
+
+
+
+
+
+
 
 
 

@@ -828,7 +828,26 @@ figcaption{
 }
 
 
+.index{
+	[data-scroll-block]{
+		transition: all 0.5s ease;
+		backface-visibility: hidden;
+		.flex-wrapper{
 
+			transform: scale(0);
+			transition: all 1s ease;
+			@media (min-width: 991px){
+				height: 100vh;
+			}
+		}
+		&.is-selected{
+			.flex-wrapper{
+				transform: scale(1);
+				transition: all 1s ease .3s;
+			}
+		}
+	}
+}
 .flex-wrapper{
 	display: flex;
 	align-items: center;
@@ -838,6 +857,7 @@ figcaption{
 	padding-bottom: 25px;
 	padding-left: 15px;
 	padding-right: 15px;
+
 }
 
 .rev-slider{

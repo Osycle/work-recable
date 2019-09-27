@@ -626,7 +626,11 @@ div.owl-nav{
 }
 
 
-
+body{
+	&.ov-hidden{
+		overflow: hidden ;
+	}
+}
 
 
 // PRELODER
@@ -637,12 +641,13 @@ div.owl-nav{
   top: 0;
   left: 0;
   z-index: 99999;
-  background: $color-2;
+  //background: $color-2;
   opacity: 1;
   margin: auto;
   //transition: all 1s ease-in-out;
   display: flex;
   align-items: center;
+  overflow: hidden;
   justify-content: center;
 
   img{
@@ -659,10 +664,13 @@ div.owl-nav{
 	// 	pointer-events: none;
 	// 	opacity: 0;
 	// }
+
 	.loader{
 		//transform: scale(0.5);
+		z-index: 1;
 		text-align: center;
 		color: white;
+		transition: all 0.8s ease 0s;
 		span{
 			text-align: center;
 			display: block;
@@ -696,29 +704,9 @@ div.owl-nav{
 		.percent{
 			font-size: 15px;
 			margin-top: 15px;
-			//display: none;
+			display: none;
 			padding-left: 10px;
 			font-weight: 700;
-		}
-		svg{
-			width: 450px;
-			height: 450px;
-			left: 50%;
-			top: 50%;
-			margin-top: -225px;
-			margin-left: -225px;
-			circle{
-				transition: all 0.225s ease-in-out;
-				stroke-dashoffset: 0;
-				stroke-dasharray: 0;
-				fill: transparent;
-				stroke: white;
-				stroke-width: 0px;
-				r: 200;
-				cx: 225;
-				cy: 225;
-			}
-			position: absolute;
 		}
 	}
 
@@ -734,33 +722,61 @@ div.owl-nav{
 	width: 100%;
 	height: 100%;
 	bottom: 0;
-	.cable-1{
-		right: 0;
-		bottom: 0;
-		position: absolute;
-		transform: scale(3);
-		.path{
-	    stroke-dasharray: 230%;
-	    stroke-dashoffset: 270%;
-		}
+	.stroke-logo{
+		top: 5vh;
+		left: -28px;
+		//    stroke-dasharray: 9110;
+		stroke-dasharray: 9110;
+		stroke-dashoffset: 9110;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+		width: 800px;
+		height: 800px;
+		position: relative;
 	}
-	.cable-2{
-		left: 0;
-		transform: scale(1.1);
-		top: 0;
-		position: absolute;
-		margin-top: -110px;
-		.path{
-	    stroke-dasharray: 410%;
-	    stroke-dashoffset: 390%;
-		}
-	}
-	svg{
-	}
-	.path{
-    stroke: lighten($color-2, 10%);
-		transition: all 1s linear;
+	.svg-image{
+    stroke: lighten($color-2, 15%);
+    //stroke: white;
+		transition: all 1.75s ease-in-out, stroke-width 2s ease-in-out;
+		stroke-opacity: 0.2;
+		//display: none;
 		fill: none;
-		stroke-width: 110px;
+		stroke-width: 20px;
+		//animation: swidth 2s ease infinite;
 	}
+}
+@keyframes swidth{
+	to, from{
+		stroke-dasharray: 18220;
+	}
+	50%{
+		stroke-dasharray: 9110;
+	}
+}
+#prebox{
+	&:not(.loadedstep).loaded{
+		pointer-events: none;
+		.layers{
+			clip-path: circle(0% at 50% 50%);
+		}
+		.loader{
+			transform: scale(0);
+		}
+	}
+	&.loadedstep{
+		.svg-image{
+			animation: swidth 2s ease infinite;
+		}
+	}
+}
+.layers{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: $color-2;
+	transition: all 1s ease;
+	clip-path: circle(0% at 50% 50%);
+	//clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+	clip-path: circle(100% at 50% 50%);
+	//pointer-events: ;
 }

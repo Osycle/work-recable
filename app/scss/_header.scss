@@ -186,10 +186,17 @@ $header-min-menu: 70px;
 }
 
 .sliding-hide{
+	.header-top{
+		background-color: transparent !important;
+	}
 	.header-logo, .header-info{
 		transform: scale(0);
 	}
 }
+.header-logo, .header-info{
+	transition-delay: 0.5s !important;
+}
+
 
 .socicons{
 	font-size: 14px;
