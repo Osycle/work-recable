@@ -828,26 +828,7 @@ figcaption{
 }
 
 
-.index{
-	[data-scroll-block]{
-		transition: all 0.5s ease;
-		backface-visibility: hidden;
-		.flex-wrapper{
 
-			transform: scale(0);
-			transition: all 1s ease;
-			@media (min-width: 991px){
-				height: 100vh;
-			}
-		}
-		&.is-selected{
-			.flex-wrapper{
-				transform: scale(1);
-				transition: all 1s ease .3s;
-			}
-		}
-	}
-}
 .flex-wrapper{
 	display: flex;
 	align-items: center;
@@ -1609,6 +1590,120 @@ figcaption{
 					background-color: rgba(darken($color-2, 5%), 0.5);
 				}
 			}
+		}
+	}
+}
+
+
+
+
+
+
+// Ебучие эффекты на главной
+.index {
+
+}
+[data-scroll-block]{
+	transition: all 0.5s ease;
+	backface-visibility: hidden;
+	*{
+		backface-visibility: hidden;
+	}
+	.flex-wrapper{
+		@media (min-width: 991px){
+			height: 100vh;
+		}
+	}
+
+
+
+}
+//intro
+.index{
+	.entry-header{
+		perspective-origin: 50% 0;
+   	perspective: 540px;
+	}
+	.bnr-carousel{
+		box-shadow: 0 0 25px 0px rgba(black, 0.5);
+	}
+	[data-scroll-block].is-selected-block{
+		h1, p, .btn-def, .btn-opacity, .bnr-slider{
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+	h1{
+  	transform-origin: bottom center;
+		transition: all 1s ease 0.3s;
+		opacity: 0;
+		transform: rotateX(-60deg) scaleY(1) matrix(0.9, 0, 0, 0.9, 0, 0) translateY(50px);
+	}
+}
+.intro{
+ 	.bnr-slider{
+ 		transition: all 1s ease 0.7s;
+ 		opacity: 0;
+ 		transform: scale(0);
+    overflow: visible;
+ 	}
+ 	.btn-content [class*="btn-"]{
+ 		transition: all 1s ease 0.5s;
+ 		transform: translateY(50px);
+ 		opacity: 0;
+ 	}
+ 	p{
+  	transform-origin: bottom center;
+		transition: all 1s ease 0.6s;
+		opacity: 0;
+		transform: rotateX(-60deg) scaleY(1) matrix(0.9, 0, 0, 0.9, 0, 0) translateY(50px);
+ 	}
+}
+.short-about{
+	.entry-header{
+		p{
+			margin-top: 5vh;
+			transform: translateY(100%);
+			opacity: 0;
+			transition: all 0.8s ease 0.7s;
+		}	
+	}
+	.bg-wrapper{
+		.img{
+			width: 100%;
+			transition: all 0.8s ease 0.6s;
+		}
+	}
+	.boxes-cell{
+		transition: all 0.7s ease 0.6s;
+		transform: translateY(100%);
+		&:nth-child(2){
+			transition-delay: 0.7s;
+		}
+		&:nth-child(3){
+			transition-delay: 0.9s;
+		}
+
+	}
+	.link-content, .link-modal-yt a{
+		transform: scale(0);
+		transition: all 1s ease 0.3s;
+	}
+	.link-modal-yt a{
+		transition-delay: 1.3s;
+	}
+	&.is-selected-block{
+		.bg-wrapper{
+			.bg-about-1{
+				width: 66.66667%;
+			}
+			.bg-about-2{
+				width: 33.33333%;
+			}
+		}
+		.short-advantages .boxes-cell, p, .link-content, .link-modal-yt a{
+				opacity: 1;
+				transform: scale(1);
 		}
 	}
 }

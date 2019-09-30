@@ -321,7 +321,25 @@
 				});
 			}
 			$(window).trigger("resize");
+			setTimeout(function(){
+				$("[data-scroll-block]").eq(0).addClass("is-selected-block");
+			}, 2500)
 		}
+
+		// Анимация блока mousemove
+		$(document).mousemove(function(event){
+		   var xPos = (event.clientX/$(window).width())-0.5,
+		       yPos = (event.clientY/$(window).height())-0.5,
+		       box = $('.box-mousemove');
+		  
+		  TweenLite.to(box, 0.6, {
+		    rotationY: 5 * xPos, 
+		    rotationX: 5 * yPos,
+		    ease: Power1.easeOut,
+		    transformPerspective: 900,
+		    transformOrigin: 'center'
+		  });
+		});
 
 		//Лимит текста
 		$("[data-text-limit]").map(function( i, el ){
@@ -336,7 +354,6 @@
 		})
 
 
-		//var scene = $(".product-img");
 		$(".parallax-scene").map(function(i, el){
 			var parallaxInstance = new Parallax(el);
 		})
@@ -542,8 +559,10 @@
 			var currentBlockTop = currentBlock.offset().top // Get position of the body
 			var textPreload = currentBlock.attr("data-text-preload")
 
-			$("[data-scroll-block]").removeClass("is-selected");
-			currentBlock.addClass("is-selected");
+			$("[data-scroll-block]").removeClass("is-selected-block");
+			setTimeout(function(){
+				currentBlock.addClass("is-selected-block");
+			}, 1300);
 
 			$("#prebox").addClass("loadedstep");
 
@@ -560,7 +579,6 @@
 				stopScroll = false;
 			}, 2000)
 		}
-
 		var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
     $("html").bind(mousewheelevt, function(e){
 		    var evt = window.event || e //equalize event object     

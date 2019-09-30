@@ -8495,11 +8495,12 @@ input[type="radio"]:checked ~ .radio-style-1, input[type="radio"]:checked ~ .rad
   -webkit-filter: drop-shadow(2px 4px 6px black);
   filter: drop-shadow(2px 4px 6px black); }
   .header-logo img {
-    width: 267px; }
+    width: 267px;
+    min-width: 267px; }
 
 @media (min-width: 992px) {
   .header-top-content .header-info {
-    width: 45%; } }
+    width: 53%; } }
 
 .header-info i, .header-info span {
   display: inline-block;
@@ -8510,7 +8511,7 @@ input[type="radio"]:checked ~ .radio-style-1, input[type="radio"]:checked ~ .rad
 
 @media (min-width: 991px) {
   .header-info {
-    margin-left: 14%; } }
+    margin-left: 15px; } }
 
 .header-info, .header-logo {
   -webkit-transition: all 0.5s ease 0.2s;
@@ -9786,30 +9787,6 @@ figcaption {
 .parallax-scenes {
   position: absolute; }
 
-.index [data-scroll-block] {
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; }
-  .index [data-scroll-block] .flex-wrapper {
-    -webkit-transform: scale(0);
-    -ms-transform: scale(0);
-    transform: scale(0);
-    -webkit-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease; }
-    @media (min-width: 991px) {
-      .index [data-scroll-block] .flex-wrapper {
-        height: 100vh; } }
-  .index [data-scroll-block].is-selected .flex-wrapper {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-    -webkit-transition: all 1s ease .3s;
-    -o-transition: all 1s ease .3s;
-    transition: all 1s ease .3s; }
-
 .flex-wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10491,6 +10468,133 @@ figcaption {
       border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
     #product_accordion .product-body ul li:hover {
       background-color: rgba(15, 20, 30, 0.5); }
+
+[data-scroll-block] {
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+  [data-scroll-block] * {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  @media (min-width: 991px) {
+    [data-scroll-block] .flex-wrapper {
+      height: 100vh; } }
+
+.index .entry-header {
+  -webkit-perspective-origin: 50% 0;
+  perspective-origin: 50% 0;
+  -webkit-perspective: 540px;
+  perspective: 540px; }
+
+.index .bnr-carousel {
+  -webkit-box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.5); }
+
+.index [data-scroll-block].is-selected-block h1, .index [data-scroll-block].is-selected-block p, .index [data-scroll-block].is-selected-block .btn-def, .index [data-scroll-block].is-selected-block .btn-opacity, .index [data-scroll-block].is-selected-block .bnr-slider {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1; }
+
+.index h1 {
+  -webkit-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+  -webkit-transition: all 1s ease 0.3s;
+  -o-transition: all 1s ease 0.3s;
+  transition: all 1s ease 0.3s;
+  opacity: 0;
+  -webkit-transform: rotateX(-60deg) scaleY(1) matrix(0.9, 0, 0, 0.9, 0, 0) translateY(50px);
+  transform: rotateX(-60deg) scaleY(1) matrix(0.9, 0, 0, 0.9, 0, 0) translateY(50px); }
+
+.intro .bnr-slider {
+  -webkit-transition: all 1s ease 0.7s;
+  -o-transition: all 1s ease 0.7s;
+  transition: all 1s ease 0.7s;
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  overflow: visible; }
+
+.intro .btn-content [class*="btn-"] {
+  -webkit-transition: all 1s ease 0.5s;
+  -o-transition: all 1s ease 0.5s;
+  transition: all 1s ease 0.5s;
+  -webkit-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  transform: translateY(50px);
+  opacity: 0; }
+
+.intro p {
+  -webkit-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+  -webkit-transition: all 1s ease 0.6s;
+  -o-transition: all 1s ease 0.6s;
+  transition: all 1s ease 0.6s;
+  opacity: 0;
+  -webkit-transform: rotateX(-60deg) scaleY(1) matrix(0.9, 0, 0, 0.9, 0, 0) translateY(50px);
+  transform: rotateX(-60deg) scaleY(1) matrix(0.9, 0, 0, 0.9, 0, 0) translateY(50px); }
+
+.short-about .entry-header p {
+  margin-top: 5vh;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease 0.7s;
+  -o-transition: all 0.8s ease 0.7s;
+  transition: all 0.8s ease 0.7s; }
+
+.short-about .bg-wrapper .img {
+  width: 100%;
+  -webkit-transition: all 0.8s ease 0.6s;
+  -o-transition: all 0.8s ease 0.6s;
+  transition: all 0.8s ease 0.6s; }
+
+.short-about .boxes-cell {
+  -webkit-transition: all 0.7s ease 0.6s;
+  -o-transition: all 0.7s ease 0.6s;
+  transition: all 0.7s ease 0.6s;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%); }
+  .short-about .boxes-cell:nth-child(2) {
+    -webkit-transition-delay: 0.7s;
+    -o-transition-delay: 0.7s;
+    transition-delay: 0.7s; }
+  .short-about .boxes-cell:nth-child(3) {
+    -webkit-transition-delay: 0.9s;
+    -o-transition-delay: 0.9s;
+    transition-delay: 0.9s; }
+
+.short-about .link-content, .short-about .link-modal-yt a {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 1s ease 0.3s;
+  -o-transition: all 1s ease 0.3s;
+  transition: all 1s ease 0.3s; }
+
+.short-about .link-modal-yt a {
+  -webkit-transition-delay: 1.3s;
+  -o-transition-delay: 1.3s;
+  transition-delay: 1.3s; }
+
+.short-about.is-selected-block .bg-wrapper .bg-about-1 {
+  width: 66.66667%; }
+
+.short-about.is-selected-block .bg-wrapper .bg-about-2 {
+  width: 33.33333%; }
+
+.short-about.is-selected-block .short-advantages .boxes-cell, .short-about.is-selected-block p, .short-about.is-selected-block .link-content, .short-about.is-selected-block .link-modal-yt a {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1); }
 
 /* 
 		_footer.scss

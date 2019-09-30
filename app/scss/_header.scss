@@ -113,12 +113,13 @@ $header-min-menu: 70px;
 	filter: drop-shadow(2px 4px 6px black);
 	img{
 		width: 267px;
+		min-width: 267px;
 	}
 }
 .header-top-content{
 	.header-info{
 		@media (min-width: 992px){
-			width: 45%;
+			width: 53%;
 		}
 	}
 }
@@ -131,7 +132,7 @@ $header-min-menu: 70px;
 		color: $color-1;
 	}
 	@media (min-width: 991px){
-		margin-left: 14%;
+		margin-left: 15px;
 	}
 }
 .header-info, .header-logo{
