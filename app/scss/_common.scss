@@ -870,7 +870,14 @@ body{
 	background-position: center -100px;
 	@media (min-width: 1360px){
 		font: 16px $font-family-1;
+
 	}
+	@media (min-width: 992px){
+		&.ov-hidden{
+			overflow: hidden ;
+		}
+	}
+
 }
 
 // :hover{

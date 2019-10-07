@@ -65,13 +65,14 @@
 		});
 
 
+
 		/* short-news owl carousel*/
 		window.newsOwl = $(".short-news-items.owl-carousel").owlCarousel({
 			nav: true,
 			//items: 3,
 			dots: false,
 			dotsEach: true,
-			autoplay: false,
+			autoplay: 5000,
 			touchDrag: false,
 			loop: false,
 			center: true,
@@ -324,6 +325,9 @@
 			setTimeout(function(){
 				$("[data-scroll-block]").eq(0).addClass("is-selected-block");
 			}, 2500)
+			setTimeout(function(){
+				$("html").animate({scrollTop:0 }, '0');
+			}, 1000)
 		}
 
 		// Анимация блока mousemove
@@ -527,15 +531,16 @@
 		//}
 
 	if( $("html").find(".index").length > 0 ){
+		var preloadBox = $("#prebox");
+		preloadBox.attr("data-anistyle", 1);
 		$("body").addClass("ov-hidden");
-		setTimeout(function(){
-			$("html").animate({scrollTop:0 }, '0');
-		}, 500)
 
 		window.currentIndexBlock = 1;
 		window.scrollBlockLength = $("[data-scroll-block]").length;
 		window.stopScroll = false;
 		$("[data-scroll-block]").addClass("atom");
+
+		// Преключение блоков  на главной
 		window.switchScroll = function (prevnext){
 			stopScroll = true;
 			if( !prevnext )
@@ -543,7 +548,7 @@
 			else
 				--currentIndexBlock;
 			
-			if( scrollBlockLength <= currentIndexBlock || currentIndexBlock <= 0){
+			if( scrollBlockLength < currentIndexBlock || currentIndexBlock <= 0){
 				currentIndexBlock = 1;
 			}
 			if (currentIndexBlock == 1){
@@ -556,24 +561,26 @@
 				
 			var index = currentIndexBlock;
 			var currentBlock = $("[data-scroll-block]").eq(currentIndexBlock-1);
-			var currentBlockTop = currentBlock.offset().top // Get position of the body
-			var textPreload = currentBlock.attr("data-text-preload")
+			var currentBlockTop = currentBlock.offset().top; // Get position of the body
+			var textPreload = currentBlock.attr("data-text-preload");
+			
+
+			preloadBox.attr("data-anistyle", currentIndexBlock);
 
 			$("[data-scroll-block]").removeClass("is-selected-block");
 			setTimeout(function(){
 				currentBlock.addClass("is-selected-block");
 			}, 1300);
 
-			$("#prebox").addClass("loadedstep");
-
+			preloadBox.addClass("loadedstep");
 
 			$("#prebox .text-preload").text(textPreload);
 
 			setTimeout(function(){
-				$("html").animate({scrollTop:currentBlockTop }, '0');
-			}, 800)
+				$("html").animate({scrollTop:currentBlockTop }, 500);
+			}, 700)
 			setTimeout(function(){
-				$("#prebox").removeClass("loadedstep");
+				preloadBox.removeClass("loadedstep");
 			}, 1300)
 			setTimeout(function(){
 				stopScroll = false;
@@ -587,12 +594,10 @@
 		    var delta = evt.detail ? evt.detail*(-40) : evt.wheelDelta //check for detail first, because it is used by Opera and FF
 
 		    if( (delta > 0) ) {
-	       	console.log("up");
 	       	if( !stopScroll && currentIndexBlock > 1)
 	       		switchScroll(true);
 		    }
 		    else if( (delta < 0) ){
-	       	console.log("down");
 	       	if( !stopScroll )
 	       		switchScroll();
 		    }   
@@ -607,113 +612,6 @@
 
 
 
-
-
-
-		if( !checkSm() ){
-			if( !$(".rev-slider").length )
-				return;
-	  	window.revslider = $(".rev-slider").revolution({
-				delay:9999999999999,
-				//startwidth:"100vw",
-				startheight: $( window ).height(),
-				autoHeight:"off",
-				fullScreenAlignForce:"off",
-
-				onHoverStop:"off",
-
-				thumbWidth:100,
-				thumbHeight:50,
-				thumbAmount:3,
-
-				hideThumbsOnMobile:"on",
-				hideBulletsOnMobile:"on",
-				hideArrowsOnMobile:"on",
-				hideThumbsUnderResoluition:0,
-
-				hideThumbs: -1,
-				hideTimerBar:"on",
-
-				keyboardNavigation:"off",
-
-				navigationType:"none",
-				navigationArrows:"solo",	//solo
-				navigationStyle:"round",
-
-				navigationHAlign:"center",
-				navigationVAlign:"bottom",
-				navigationHOffset: 0,
-				navigationVOffset: 30,
-
-				soloArrowLeftHalign:"left",
-				soloArrowLeftValign:"center",
-				soloArrowLeftHOffset:30,
-				soloArrowLeftVOffset:0,
-
-				soloArrowRightHalign:"right",
-				soloArrowRightValign:"center",
-				soloArrowRightHOffset:30,
-				soloArrowRightVOffset:0,
-
-
-				touchenabled: "off",
-				swipe_velocity:"0.7",
-				swipe_max_touches:"1",
-				swipe_min_touches:"1",
-				drag_block_vertical: "false",
-
-				stopAtSlide:-1,
-				stopAfterLoops:-1,
-				hideCaptionAtLimit:0,
-				hideAllCaptionAtLilmit:0,
-				hideSliderAtLimit:0,
-
-				fullWidth:"off",
-				fullScreen:"off",
-				fullScreenOffsetContainer: "#header",
-
-				dottedOverlay:"none",
-				forceFullWidth:"off",
-
-	      shadow:0
-
-	    });
-			revslider.on("revolution.slide.onchange",function (e,data) {
-				if( data.slideIndex != 1 )
-					$("#header").addClass("sliding-hide");
-				else
-					$("#header").removeClass("sliding-hide");
-			});
-
-			function scrollPage(){
-		  	if( scrollDown )
-		  		revslider.revnext()
-		  	else
-		  		revslider.revprev();
-		  }
-
-			window.scrollDown = false;
-			var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
-
-	    $(".rev-slider").bind(mousewheelevt, function(e){
-		       
-			    var evt = window.event || e //equalize event object     
-			    evt = evt.originalEvent ? evt.originalEvent : evt; //convert to originalEvent if possible               
-			    var delta = evt.detail ? evt.detail*(-40) : evt.wheelDelta //check for detail first, because it is used by Opera and FF
-
-			    if( (delta > 0) ) {
-		       	console.log("up");
-			      scrollDown = false;
-			      scrollPage();
-			    }
-			    else if( (delta < 0) ){
-		       	console.log("down");
-		       	scrollDown = true;
-		       	scrollPage();
-			    }   
-
-	    });
-	  } // end if
 
 
 

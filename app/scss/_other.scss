@@ -626,11 +626,6 @@ div.owl-nav{
 }
 
 
-body{
-	&.ov-hidden{
-		overflow: hidden ;
-	}
-}
 
 
 // PRELODER
@@ -753,14 +748,93 @@ body{
 		stroke-dasharray: 9110;
 	}
 }
+@keyframes anistyle-1{
+	to, from{
+		clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%, 50% 100%, 50% 0);
+	}
+	30%, 60%{
+		clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+	}
+}
+
+@keyframes anistyle-2{
+	from{
+		clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
+	}
+	30%, 60%{
+		clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+	}
+	80%{
+		clip-path: polygon(0 0, 0 60%, 100% 60%, 100% 0);
+	}
+	to{
+		clip-path: polygon(0 0, 0 0, 100% 0, 100% 0);
+		
+	}
+}
+@keyframes anistyle-3{
+	from{
+		clip-path: polygon(100% 100%, 0 100%, 100% 100%, 100% 0);
+	}
+	10%{
+		clip-path: polygon(100% 100%, 0 100%, 100% 0, 100% 0);
+	}
+	30%, 60%{
+		clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0);
+	}
+	85%{
+		clip-path: polygon(100% 100%, 100% 100%, 0 0, 100% 0);
+	}
+	to{
+		clip-path: polygon(100% 100%, 100% 0, 0 0, 100% 0);
+	}
+
+}
+@keyframes anistyle-4{
+	from{
+		clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 8%, 100% 7%, 100% 93%, 0 94%, 0 100%, 100% 100%, 100% 0%);
+	}
+	30%, 60%{
+		//clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 51%, 0 51%, 0 100%, 100% 100%, 100% 0%);
+		clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 50%, 0 50%, 0 100%, 100% 100%, 100% 0%);
+	}
+	// 40%, 50%{
+	// 	//clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 45%, 100% 50%, 100% 45%, 0 50%, 0 100%, 100% 100%, 100% 0%);
+	// 	clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 99.9%, 100% 0, 100% 0.1%, 0% 100%, 0 100%, 100% 100%, 100% 0%);
+	// }
+	to{
+		//clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 8%, 100% 7%, 100% 93%, 0 94%, 0 100%, 100% 100%, 100% 0%);
+		clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+	}
+}
+@keyframes anistyle-5{
+	from{
+		clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	}
+	40%, 60%{
+		//clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 51%, 0 51%, 0 100%, 100% 100%, 100% 0%);
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+	65%{
+		clip-path: polygon(0 0, 88% 0, 89% 100%, 0 100%);
+	}
+	to{
+		clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+	}
+}
+
+
 #prebox{
+	.loader{
+		//display: none;
+	}
 	&:not(.loadedstep).loaded{
 		pointer-events: none;
 		.layers{
-			clip-path: circle(0% at 50% 50%);
+			clip-path: polygon(0 0, 100% 100%, 100% 100%, 100% 100%, 0 0, 0 0);
 		}
 		.loader{
-			transform: scale(0);
+			//transform: scale(0);
 		}
 	}
 	&.loadedstep{
@@ -768,15 +842,52 @@ body{
 			animation: swidth 2s ease infinite;
 		}
 	}
+	&[data-anistyle="1"]{
+		.layers{
+			animation: anistyle-1 2s ease 1 0s;
+		}
+	}
+	&[data-anistyle="2"]{
+		.layers{
+			animation: anistyle-2 2s linear 1;
+		}
+	}
+	&[data-anistyle="3"]{
+		.layers{
+			animation: anistyle-3 2.3s linear 1;
+		}
+	}
+	&[data-anistyle="4"]{
+		.layers{
+			animation: anistyle-4 2s linear 1;
+		}
+	}
+	&[data-anistyle="5"]{
+		.layers{
+			animation: anistyle-5 2s linear 1;
+		}
+	}
+	&[data-anistyle="6"]{
+		.layers{
+			animation: anistyle-2 2s linear 1;
+		}
+	}
+
+
+
 }
+
 .layers{
 	position: absolute;
 	width: 100%;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+	//clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
 	height: 100%;
-	background-color: $color-2;
-	transition: all 1s ease;
-	clip-path: circle(0% at 50% 50%);
+	background-color: darken($color-2, 0%);
+	transition: all 0s ease 2s;
 	//clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
-	clip-path: circle(100% at 50% 50%);
+	//clip-path: polygon(0 0, 100% 100%, 100% 100%, 100% 100%, 0 0, 0 0);
 	//pointer-events: ;
 }
