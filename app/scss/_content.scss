@@ -1813,3 +1813,69 @@ figcaption{
 		}
 	}
 }
+
+
+
+
+
+
+//Player
+#page_player{
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(white, 0.0);
+	margin: 0;
+	padding: 0;
+}
+.fancybox-stage{
+
+	.fancybox-slide{
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+.page-player{
+	width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .media-wrapper{
+  	width: 100%;
+  }
+  [role="button"]{
+  	&:focus{
+  		outline: none;
+  	}
+  }
+	video{
+		width: 100% !important;
+		height: 100% !important;
+	}
+	.mejs__container{
+		width: 100% !important;
+		height: calc(100vh - 6px) !important;
+		background: transparent;
+	}
+	.mejs__time-handle{
+		display: none;
+	}
+	.mejs__time-current{
+		//height: 15px;
+		&:after{
+			@extend .clafclear;
+			width: 3px;
+			transition: all 0.3s ease;
+			transform: rotate(15deg) scale(1.5);
+			background-color: white;
+			height: 100%;
+			right: 2px;
+		}
+	}
+	.mejs__time-total{
+		//height: 15px;
+	}
+	.mejs__time-loaded{
+		//height: 15px;
+	}
+}

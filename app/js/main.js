@@ -120,7 +120,7 @@
 
 
 		/*FANCYBOX*/
-		if ($("[data-fancybox]").length != 0)
+		if ($("[data-fancybox]").length != 0){
 			$("[data-fancybox]").fancybox({
 				afterShow: function(instance, current) {},
 				animationEffect : "zoom",
@@ -128,10 +128,16 @@
 				thumbs : {
 					autoStart   : true
 				},
+				beforeClose: function(){
+					$("video")[0].pause();
+						console.log("хуй");
+				},
 				touch : false,
 				transitionDuration : 366,
 				transitionEffect: "zoom-in-out"
 			});
+
+		}
 		// SMOTHSCROLL-LINK
 		if( "smoothScroll" in window )
 			smoothScroll.init({
@@ -263,12 +269,12 @@
 						contain: true,
 						pageDots: false
 					});
-          $("[data-fancybox]").fancybox({
-            afterShow: function(instance, current) {
-              this.$content.find(".carousel-main").flickity("resize");
-              this.$content.find(".carousel-nav").flickity("resize");
-            }
-          });
+          // $("[data-fancybox]").fancybox({
+          //   afterShow: function(instance, current) {
+          //     this.$content.find(".carousel-main").flickity("resize");
+          //     this.$content.find(".carousel-nav").flickity("resize");
+          //   }
+          // });
 				}
 			}
 		};
@@ -355,9 +361,23 @@
 				text = text.substring(0, textLimit )
 				el.text( text+ " ..." );
 			}
-		})
+		});
 
 
+		//Player
+		$('video, audio').mediaelementplayer({
+			// Do not forget to put a final slash (/)
+			pluginPath: 'https://cdnjs.com/libraries/mediaelement/',
+			// this will allow the CDN to use Flash without restrictions
+			// (by default, this is set as `sameDomain`)
+			shimScriptAccess: 'always'
+			// more configuration
+		});
+		$('[data-src="#page_player"]').on("click", function(){
+			$("#page_player video")[0].play();
+		});
+
+		// Паралакс
 		$(".parallax-scene").map(function(i, el){
 			var parallaxInstance = new Parallax(el);
 		})
@@ -369,12 +389,12 @@
 		$(window).on("scroll", function(e) {
 
 			//Адаптация хедера при скролинге
-			if ($(window).scrollTop() > 100 && headerRange == false) {
+			if ($(window).scrollTop() > 50 && headerRange == false) {
 
 				headerRange = true;
 				if (minMenu) minMenu.addClass("scrolled");
 
-			} else if ($(window).scrollTop() < 100 && headerRange == true) {
+			} else if ($(window).scrollTop() < 50 && headerRange == true) {
 				headerRange = !true;
 				if (minMenu) minMenu.removeClass("scrolled");
 			} //.originalEvent.wheelDelta
@@ -408,13 +428,12 @@
 
 		var tl = new TimelineMax();
 		tl.pause();
-		tl.to('.menudrop', .3, {
+		tl.to('.menudrop', 0.4, {
 				top:0,
-				right: 0,
-				width:"100%",
-				borderRadius: "0 0 0 0",
-				ease: Power4.easeOut
+				right: "5px",
+				ease: Power0.easeNone
 		})
+
 		tl.to('menu ul li:nth-child(1)', .5, {
 			  opacity:1,
 					y:0,
@@ -440,7 +459,6 @@
 					y:0,
 					ease: Power4.easeOut
 			},'-=0.3')
-
 
 		//Прилоудер
 		window.preLoader = {
@@ -587,7 +605,7 @@
 			}, 2000)
 		}
 		var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
-    $("html").bind(mousewheelevt, function(e){
+    $("main").bind(mousewheelevt, function(e){
 		    var evt = window.event || e //equalize event object     
 
 		    evt = evt.originalEvent ? evt.originalEvent : evt; //convert to originalEvent if possible               

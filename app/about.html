@@ -146,7 +146,15 @@
 
 			</div>
 		</div>
-
+		<div id="page_player">
+			<div class="page-player">
+        <div class="media-wrapper">
+          <video id="player1" width="640" height="360" style="max-width:100%;" poster="" preload="none" controls playsinline webkit-playsinline>
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/BigBuckBunny.mp4" type="video/mp4">
+          </video>
+        </div>
+			</div>
+		</div>
 	</div>
 	<div class="preloader" id="prebox">
 		<div class="layers">
@@ -165,25 +173,26 @@
 					</g>
 				</svg>
 			</div>
-		</div>
-		<div class="loader">
-			<span class="img-content">
-				<img id="pre-logo" src="img/logo.png"/>
-			</span>
-			<p class="color-white m-t-10">Производство кабельной продукции</p>
-			<span class="textfiller">
-				<span class="text-preload"></span>
-				<span class="text-shadow"></span>
-			</span>
-			<span class="percent">0 %</span>
+			<div class="loader">
+				<span class="img-content">
+					<img id="pre-logo" src="img/logo.svg"/>
+				</span>
+				<p class="color-white m-t-10">Производство кабельной продукции</p>
+				<span class="textfiller">
+					<span class="text-preload"></span>
+					<span class="text-shadow"></span>
+				</span>
+				<span class="percent">0 %</span>
+			</div>
 		</div>
 	</div>
+
 	<div id="page">
 
 
 		<!-- HEADER -->
-		<div class="header-hidden"></div>
-		<header id="header" class="hidden-sm hidden-xs hovered" data-aos="fade">
+		<div class="header-hidden block"></div>
+		<header id="header" class="hidden-sm hidden-xs header-scroll" data-aos="fade">
 
 
 			<!-- HEADER TOP -->
@@ -196,21 +205,24 @@
 
 							<div class="header-logo p-h-15">
 								<a href="index.html" title="">
-									<img src="img/logo.png" alt="">
+									<img src="img/logo.svg" alt="">
 								</a>
 							</div>
 
 							<div class="header-info">
 								<span class="header-address nowraper">
 									<i class="icm icm-placeholder-filled-point p-r-10"></i>
-									<span class='va-top-inline'>Обл.Ташкент, Зангиатинский р-н, Катартол Марказий Шох 129</span>
+									<span class='va-top-inline'>Обл.Ташкент, Зангиатинский р-н, Катартол Марках Шох 129</span>
 								</span>
 								<span class="header-phone">
 									<i class="icm icm-call-answer p-r-10"></i>
 									<span>
 										<span><a href="tel:+998971495050"><span class="color-1">+998 97 &nbsp;</span> <big><b>149-50-50</b></big></a></span><br>
-										<span><a href="tel:+998971495050"><span class="color-1">+998 97 &nbsp;</span> <big><b>149-50-50</b></big></a></span>
+										<span><a href="tel:+998971496060"><span class="color-1">+998 97 &nbsp;</span> <big><b>149-60-60</b></big></a></span>
 									</span>
+								</span>
+								<span class="nowraper header-call">
+									<p><big>Call center </big><b class="color-1">24/7</b></p>
 								</span>
 							</div>
 
@@ -336,6 +348,7 @@
 			  </div>
 			</div>
 
+
 			<div class="about">
 				<div class="container-fluid-page p-v-md">
 					<div class="entry-header m-b-30">
@@ -381,7 +394,7 @@
 							<div class="yt-preload m-v-15">
 								<img src="img/other/yt-preload.jpg">
 								<span class="link-modal-yt">
-									<a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" data-fancybox><i class="icm icm-play-button"></i></a>
+									<a href="javascript:;" data-src="#page_player" data-fancybox><i class="icm icm-play-button"></i></a>
 								</span>
 							</div>
 						</div>
@@ -523,7 +536,6 @@
 	<!-- SCRIPTS -->
 	<script src="js/scripts.min.js"></script>
 	<script src="js/main.js"></script>
-
 </body>
 
 </html>

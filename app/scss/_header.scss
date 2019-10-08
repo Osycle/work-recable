@@ -119,11 +119,15 @@ $header-min-menu: 70px;
 .header-top-content{
 	.header-info{
 		@media (min-width: 992px){
-			width: 53%;
+			width: 60%;
 		}
 	}
 }
 .header-info{
+	text-align: right;
+	*{
+		text-align: left;
+	}
 	i,span{
 		display: inline-block;
 		vertical-align: middle;
@@ -144,7 +148,7 @@ $header-min-menu: 70px;
 	}
 	@media (min-width: 992px) {
 		margin-right: 20px;
-		max-width: 280px;
+		max-width: 290px;
 		display: inline-block;
 	}
 }
@@ -153,7 +157,18 @@ $header-min-menu: 70px;
 		font-size: 22px;
 	}
 }
-
+.header-call{
+	padding-left: 1.5vw;
+	font-family: $font-family-2;
+	font-size: 2em;
+	big{
+		font-weight: 700;
+	}
+	.color-1{
+		font-size: 0.7em;
+		vertical-align: super;
+	}
+}
 
 .header-scroll{
 	.header-top{
@@ -165,7 +180,8 @@ $header-min-menu: 70px;
 	}
 
 	.header-top, .header-top-content, .header-logo img, .header-logo{
-		transition: all 0.5s ease; 	
+		transition: all 0.5s ease; 
+		backface-visibility: hidden;
 	}
 	&.scrolled, &.header-pages{
 		.header-bottom{
@@ -239,21 +255,22 @@ $header-min-menu: 70px;
 	color: white;
 	position:fixed;
 	top:-100%;
-	width:0;
+	width:100%;
 	height:100vh;
 	z-index: 2;
 	overflow:hidden;
 	z-index: 110;
 	right: 0;
 	transform-origin: 100% 50%;
-	border-radius: 0 0 0% 100%;
-	right: -20%;
+	//border-radius: 0 0 0% 100%;
+	right: calc(-100% + 5px);
 	display: flex;
 	align-items: center;
-	transition: all 0.4s ease;
+	transition: right 0.5s linear 0.5s, top 0.4s linear 0s;
 	background-color: black;
 	background-image: url('../img/bg/bg-menu.jpg');
 	background-position: center;
+	border-left: 5px solid white;
 	&:before{
 		@extend .clafclear;
 		background-image: url('../img/other/menu-logo-bar.png');
