@@ -228,10 +228,6 @@
 
 			//$(".bnr-carousel .carousel-items").append("<div class='container-arrows'></div>").find(".container-arrows").append($(".bnr-carousel .carousel-items .flickity-prev-next-button"))
 			//$(".bnr-carousel .container-arrows").append('<button class="flickity-prev-next-button previous" type="button" aria-label="previous"><svg viewBox="0 0 100 100"><path d="M 30,50 L 55,75 L 60,70 L 40,50  L 60,30 L 55,25 Z" class="arrow"></path></svg></button><button class="flickity-prev-next-button next" type="button" aria-label="next"><svg viewBox="0 0 100 100"><path d="M 30,50 L 55,75 L 60,70 L 40,50  L 60,30 L 55,25 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button>');
-
-
-
-
 		}
 
 		if ($(".carousel-article").length >= 0) {
@@ -316,7 +312,30 @@
     		that.removeClass("filled");
     })
 
-
+    // Анимация цифр
+    var counterAnimateContainer = $(".counter-animate-container") || null;
+    $(window).on("scroll.animate", function(){
+	    if( counterAnimateContainer.length && !counterAnimateContainer.hasClass("counter-animate-started") && scrolledDiv( counterAnimateContainer ) ){
+		      counterAnimateContainer.addClass("counter-animate-started");
+	    		setTimeout(function(){
+		      	$(".counter-animate").map( function(i, el){
+		        	var el = $(el);
+		        	var num = el.text()*1;
+		        	if( isNaN(num) )
+		        	  return;
+		        	var cnt = 0;
+		        	el.text(cnt)
+			        var interval = setInterval(function(){
+			          el.text( Math.round(cnt += num/(2*25) ) )
+			          if( cnt >= num ){
+			            clearInterval( interval );
+			            el.text( num );
+			          }
+			        }, 75);
+		     		}, 2000);
+		      });
+	    }
+    })
 
 		function onLoaded() {
 			/*MASONRY*/
@@ -426,6 +445,7 @@
 			}
 		}
 
+
 		var tl = new TimelineMax();
 		tl.pause();
 		tl.to('.menudrop', 0.4, {
@@ -525,6 +545,7 @@
 		        $(preloadPercent).text(per + "%");
 		        $(".text-shadow").css("left", per + "%")
 		        $(".svg-animate .stroke-logo").css("stroke-dasharray", 9110 + (per * 91.1)+"" );
+		        $(".svg-wrapper-1 path").css("stroke-dashoffset", 83400 - (per * (83400/100) )  );
 		        if( per == 100 )
 		        	//$(".svg-animate .stroke-logo").css("stroke-width", "55px" );
 		        	setTimeout(function(){

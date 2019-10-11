@@ -9404,7 +9404,53 @@ figcaption {
     @media (min-width: 992px) {
       .short-about .entry-header {
         margin-left: 70px;
-        margin-top: 10vh; } }
+        margin-top: 2vh; } }
+
+.short-advantages {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+  .short-advantages:hover .boxes-cell-wrapper {
+    -webkit-transform: translateY(5px);
+    -ms-transform: translateY(5px);
+    transform: translateY(5px); }
+  .short-advantages .boxes-cell-wrapper {
+    padding: 20px 30px;
+    position: relative;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: rgba(15, 20, 30, 0.5);
+    -webkit-box-shadow: 0 0 0 0 transparent;
+    box-shadow: 0 0 0 0 transparent; }
+    .short-advantages .boxes-cell-wrapper .align-i-center {
+      height: 150px; }
+    .short-advantages .boxes-cell-wrapper h3 {
+      margin-top: 0; }
+    .short-advantages .boxes-cell-wrapper .num {
+      position: absolute;
+      right: 15px;
+      display: inline-block;
+      top: 10px;
+      font-family: "Akrobat";
+      font-size: 4.0625em;
+      line-height: 100%;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.3); }
+    .short-advantages .boxes-cell-wrapper:hover {
+      -webkit-transform: translateY(-15px);
+      -ms-transform: translateY(-15px);
+      transform: translateY(-15px);
+      background-color: #ddaa1c; }
+
+.about-counter {
+  text-align: center; }
+  .about-counter .boxes-cell:not(:last-child) {
+    border-right: 1px solid #b3b3b3; }
+  .about-counter h1 {
+    color: #ddaa1c; }
+  .about-counter p:nth-child(2) {
+    color: #b3b3b3;
+    font-size: 0.8125em; }
 
 .link-modal-yt {
   position: absolute;
@@ -9445,45 +9491,6 @@ figcaption {
       transition-delay: 0s !important;
       background-color: rgba(221, 170, 28, 0.1);
       text-shadow: 0 0 5px rgba(221, 170, 28, 0.7); }
-
-.short-advantages {
-  margin-top: 30px;
-  margin-bottom: 30px; }
-  @media (min-width: 992px) {
-    .short-advantages {
-      margin-top: 18vh; } }
-  .short-advantages:hover .boxes-cell-wrapper {
-    -webkit-transform: translateY(5px);
-    -ms-transform: translateY(5px);
-    transform: translateY(5px); }
-  .short-advantages .boxes-cell-wrapper {
-    padding: 20px 30px;
-    position: relative;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    background-color: rgba(15, 20, 30, 0.5);
-    -webkit-box-shadow: 0 0 0 0 transparent;
-    box-shadow: 0 0 0 0 transparent; }
-    .short-advantages .boxes-cell-wrapper .align-i-center {
-      height: 150px; }
-    .short-advantages .boxes-cell-wrapper h3 {
-      margin-top: 0; }
-    .short-advantages .boxes-cell-wrapper .num {
-      position: absolute;
-      right: 15px;
-      display: inline-block;
-      top: 10px;
-      font-family: "Akrobat";
-      font-size: 4.0625em;
-      line-height: 100%;
-      font-weight: 800;
-      color: rgba(255, 255, 255, 0.3); }
-    .short-advantages .boxes-cell-wrapper:hover {
-      -webkit-transform: translateY(-15px);
-      -ms-transform: translateY(-15px);
-      transform: translateY(-15px);
-      background-color: #ddaa1c; }
 
 .short-news {
   overflow: hidden; }
@@ -9823,6 +9830,10 @@ figcaption {
   padding-bottom: 25px;
   padding-left: 15px;
   padding-right: 15px; }
+  @media (max-width: 991px) {
+    .flex-wrapper .bg-wrapper {
+      background-position: center;
+      left: 0; } }
 
 .rev-slider .flex-wrapper {
   display: -webkit-box;
@@ -10530,6 +10541,13 @@ figcaption {
   transform: scale(1);
   opacity: 1; }
 
+@media (max-width: 991px) {
+  html [data-scroll-block] h1, html [data-scroll-block] p, html [data-scroll-block] .btn-def, html [data-scroll-block] .btn-opacity, html [data-scroll-block] .bnr-slider, html [data-scroll-block] .entry-header, html [data-scroll-block] .boxes-cell, html [data-scroll-block] .carousel, html [data-scroll-block] .nav-content, html [data-scroll-block] .tab-content, html [data-scroll-block] label, html [data-scroll-block] h4 {
+    -webkit-transform: scale(1) !important;
+    -ms-transform: scale(1) !important;
+    transform: scale(1) !important;
+    opacity: 1 !important; } }
+
 .index .intro .bnr-slider {
   -webkit-transition: all 1s ease 0.7s;
   -o-transition: all 1s ease 0.7s;
@@ -10611,7 +10629,7 @@ figcaption {
 .index .short-about.is-selected-block .bg-wrapper .bg-about-2 {
   width: 33.33333%; }
 
-.index .short-about.is-selected-block .short-advantages .boxes-cell, .index .short-about.is-selected-block p, .index .short-about.is-selected-block .link-content, .index .short-about.is-selected-block .link-modal-yt a {
+.index .short-about.is-selected-block .boxes-cell, .index .short-about.is-selected-block p, .index .short-about.is-selected-block .link-content, .index .short-about.is-selected-block .link-modal-yt a {
   opacity: 1;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
@@ -10813,6 +10831,386 @@ figcaption {
     background-color: white;
     height: 100%;
     right: 2px; }
+
+.preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  opacity: 1;
+  margin: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .preloader:not([data-anistyle]) {
+    -webkit-transition: all 0.8s ease 0s;
+    -o-transition: all 0.8s ease 0s;
+    transition: all 0.8s ease 0s; }
+    .preloader:not([data-anistyle]).loaded {
+      opacity: 0; }
+    .preloader:not([data-anistyle]) .layers {
+      -webkit-clip-path: none !important;
+      clip-path: none !important; }
+  .preloader img {
+    width: 267px;
+    min-width: 267px;
+    margin-bottom: 15px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .preloader img:nth-child(2) {
+      opacity: 0.1;
+      -webkit-filter: blur(2px);
+      filter: blur(2px);
+      -webkit-transform: matrix(1, 0, 0, -1, 0, 0) scaleY(1);
+      -ms-transform: matrix(1, 0, 0, -1, 0, 0) scaleY(1);
+      transform: matrix(1, 0, 0, -1, 0, 0) scaleY(1); }
+  .preloader .loader {
+    z-index: 1;
+    text-align: center;
+    color: white;
+    -webkit-transition: all 0.8s ease 0s;
+    -o-transition: all 0.8s ease 0s;
+    transition: all 0.8s ease 0s; }
+    .preloader .loader span {
+      text-align: center;
+      display: block; }
+    .preloader .loader .img-content {
+      position: relative;
+      width: 400px; }
+    .preloader .loader .textfiller {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 1em;
+      position: relative;
+      display: inline-block;
+      font-family: "TT Norms";
+      color: #ddaa1c;
+      font-style: italic; }
+      .preloader .loader .textfiller .text-shadow {
+        display: inline-block;
+        -webkit-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+        position: absolute;
+        background-color: rgba(23, 32, 47, 0.5);
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0; }
+    .preloader .loader .percent {
+      font-size: 15px;
+      margin-top: 15px;
+      display: none;
+      padding-left: 10px;
+      font-weight: 700; }
+
+.svg-animate {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  bottom: 0; }
+  .svg-animate .stroke-logo {
+    top: 5vh;
+    left: -28px;
+    stroke-dasharray: 9110;
+    stroke-dashoffset: 9110;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    width: 800px;
+    height: 800px;
+    position: relative; }
+  .svg-animate .svg-image {
+    stroke: #304362;
+    -webkit-transition: all 1.75s ease-in-out, stroke-width 2s ease-in-out;
+    -o-transition: all 1.75s ease-in-out, stroke-width 2s ease-in-out;
+    transition: all 1.75s ease-in-out, stroke-width 2s ease-in-out;
+    stroke-opacity: 0.2;
+    fill: none;
+    stroke-width: 20px; }
+
+@-webkit-keyframes swidth {
+  to, from {
+    stroke-dasharray: 18220; }
+  50% {
+    stroke-dasharray: 9110; } }
+
+@keyframes swidth {
+  to, from {
+    stroke-dasharray: 18220; }
+  50% {
+    stroke-dasharray: 9110; } }
+
+@-webkit-keyframes anistyle-1 {
+  to, from {
+    -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%, 50% 100%, 50% 0);
+    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%, 50% 100%, 50% 0); }
+  30%, 60% {
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0); } }
+
+@keyframes anistyle-1 {
+  to, from {
+    -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%, 50% 100%, 50% 0);
+    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%, 50% 100%, 50% 0); }
+  30%, 60% {
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0); } }
+
+@-webkit-keyframes anistyle-2 {
+  from {
+    -webkit-clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
+    clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%); }
+  30%, 60% {
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0); }
+  80% {
+    -webkit-clip-path: polygon(0 0, 0 60%, 100% 60%, 100% 0);
+    clip-path: polygon(0 0, 0 60%, 100% 60%, 100% 0); }
+  to {
+    -webkit-clip-path: polygon(0 0, 0 0, 100% 0, 100% 0);
+    clip-path: polygon(0 0, 0 0, 100% 0, 100% 0); } }
+
+@keyframes anistyle-2 {
+  from {
+    -webkit-clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
+    clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%); }
+  30%, 60% {
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0); }
+  80% {
+    -webkit-clip-path: polygon(0 0, 0 60%, 100% 60%, 100% 0);
+    clip-path: polygon(0 0, 0 60%, 100% 60%, 100% 0); }
+  to {
+    -webkit-clip-path: polygon(0 0, 0 0, 100% 0, 100% 0);
+    clip-path: polygon(0 0, 0 0, 100% 0, 100% 0); } }
+
+@-webkit-keyframes anistyle-3 {
+  from {
+    -webkit-clip-path: polygon(100% 100%, 0 100%, 100% 100%, 100% 0);
+    clip-path: polygon(100% 100%, 0 100%, 100% 100%, 100% 0); }
+  10% {
+    -webkit-clip-path: polygon(100% 100%, 0 100%, 100% 0, 100% 0);
+    clip-path: polygon(100% 100%, 0 100%, 100% 0, 100% 0); }
+  30%, 60% {
+    -webkit-clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0);
+    clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0); }
+  85% {
+    -webkit-clip-path: polygon(100% 100%, 100% 100%, 0 0, 100% 0);
+    clip-path: polygon(100% 100%, 100% 100%, 0 0, 100% 0); }
+  to {
+    -webkit-clip-path: polygon(100% 100%, 100% 0, 0 0, 100% 0);
+    clip-path: polygon(100% 100%, 100% 0, 0 0, 100% 0); } }
+
+@keyframes anistyle-3 {
+  from {
+    -webkit-clip-path: polygon(100% 100%, 0 100%, 100% 100%, 100% 0);
+    clip-path: polygon(100% 100%, 0 100%, 100% 100%, 100% 0); }
+  10% {
+    -webkit-clip-path: polygon(100% 100%, 0 100%, 100% 0, 100% 0);
+    clip-path: polygon(100% 100%, 0 100%, 100% 0, 100% 0); }
+  30%, 60% {
+    -webkit-clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0);
+    clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0); }
+  85% {
+    -webkit-clip-path: polygon(100% 100%, 100% 100%, 0 0, 100% 0);
+    clip-path: polygon(100% 100%, 100% 100%, 0 0, 100% 0); }
+  to {
+    -webkit-clip-path: polygon(100% 100%, 100% 0, 0 0, 100% 0);
+    clip-path: polygon(100% 100%, 100% 0, 0 0, 100% 0); } }
+
+@-webkit-keyframes anistyle-4 {
+  from {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 8%, 100% 7%, 100% 93%, 0 94%, 0 100%, 100% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 8%, 100% 7%, 100% 93%, 0 94%, 0 100%, 100% 100%, 100% 0%); }
+  30%, 60% {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 50%, 0 50%, 0 100%, 100% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 50%, 0 50%, 0 100%, 100% 100%, 100% 0%); }
+  to {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%); } }
+
+@keyframes anistyle-4 {
+  from {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 8%, 100% 7%, 100% 93%, 0 94%, 0 100%, 100% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 8%, 100% 7%, 100% 93%, 0 94%, 0 100%, 100% 100%, 100% 0%); }
+  30%, 60% {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 50%, 0 50%, 0 100%, 100% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 50%, 0 50%, 0 100%, 100% 100%, 100% 0%); }
+  to {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%); } }
+
+@-webkit-keyframes anistyle-5 {
+  from {
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+  40%, 60% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  65% {
+    -webkit-clip-path: polygon(0 0, 88% 0, 89% 100%, 0 100%);
+    clip-path: polygon(0 0, 88% 0, 89% 100%, 0 100%); }
+  to {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); } }
+
+@keyframes anistyle-5 {
+  from {
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+  40%, 60% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  65% {
+    -webkit-clip-path: polygon(0 0, 88% 0, 89% 100%, 0 100%);
+    clip-path: polygon(0 0, 88% 0, 89% 100%, 0 100%); }
+  to {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); } }
+
+#prebox:not(.loadedstep).loaded {
+  pointer-events: none; }
+  #prebox:not(.loadedstep).loaded .layers {
+    -webkit-clip-path: polygon(0 0, 100% 100%, 100% 100%, 100% 100%, 0 0, 0 0);
+    clip-path: polygon(0 0, 100% 100%, 100% 100%, 100% 100%, 0 0, 0 0); }
+
+#prebox.loadedstep .svg-image {
+  -webkit-animation: swidth 2s ease infinite;
+  animation: swidth 2s ease infinite; }
+
+#prebox[data-anistyle="1"] .layers {
+  -webkit-animation: anistyle-1 2s ease 1 0s;
+  animation: anistyle-1 2s ease 1 0s; }
+
+#prebox[data-anistyle="2"] .layers {
+  -webkit-animation: anistyle-2 2s linear 1;
+  animation: anistyle-2 2s linear 1; }
+
+#prebox[data-anistyle="3"] .layers {
+  -webkit-animation: anistyle-3 2.3s linear 1;
+  animation: anistyle-3 2.3s linear 1; }
+
+#prebox[data-anistyle="4"] .layers {
+  -webkit-animation: anistyle-4 2s linear 1;
+  animation: anistyle-4 2s linear 1; }
+
+#prebox[data-anistyle="5"] .layers {
+  -webkit-animation: anistyle-5 2s linear 1;
+  animation: anistyle-5 2s linear 1; }
+
+#prebox[data-anistyle="6"] .layers {
+  -webkit-animation: anistyle-2 2s linear 1;
+  animation: anistyle-2 2s linear 1; }
+
+.layers {
+  position: absolute;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #17202f;
+  -webkit-transition: all 0s ease 0s;
+  -o-transition: all 0s ease 0s;
+  transition: all 0s ease 0s; }
+
+.first-layers {
+  position: absolute;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.3s ease, opacity 0.5s ease 0.5s;
+  -o-transition: all 0.3s ease, opacity 0.5s ease 0.5s;
+  transition: all 0.3s ease, opacity 0.5s ease 0.5s;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  opacity: 1;
+  pointer-events: auto;
+  background-color: #17202f; }
+  .first-layers h1 {
+    font-size: 3.125em; }
+  .first-layers .first-layers-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100vh;
+    position: absolute; }
+  .first-layers .pre-logo {
+    width: 400px; }
+  .first-layers .svg-wrapper-1 {
+    width: 900px;
+    margin-bottom: -160px;
+    margin-right: -30px; }
+    .first-layers .svg-wrapper-1 svg {
+      width: 100%;
+      max-width: 100%; }
+      .first-layers .svg-wrapper-1 svg path {
+        -webkit-transition: all 2s linear;
+        -o-transition: all 2s linear;
+        transition: all 2s linear; }
+      .first-layers .svg-wrapper-1 svg path {
+        stroke-dasharray: 83400;
+        stroke-dashoffset: 83400; }
+  .first-layers .svg-wrapper-2 {
+    width: 700px;
+    position: absolute; }
+    .first-layers .svg-wrapper-2 svg {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: -336px;
+      margin-right: -30px; }
+    .first-layers .svg-wrapper-2 path {
+      fill: rgba(255, 255, 255, 0.05); }
+
+#prebox:not(.loaded) .layers {
+  display: none;
+  -webkit-transition: all 0s linear 0s !important;
+  -o-transition: all 0s linear 0s !important;
+  transition: all 0s linear 0s !important; }
+
+#prebox.loaded .first-layers {
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1); }
 
 /* 
 		_footer.scss
@@ -11344,311 +11742,6 @@ div.owl-nav .owl-prev, div.owl-nav .owl-next {
     -webkit-transform-origin: 0 0;
     -ms-transform-origin: 0 0;
     transform-origin: 0 0; }
-
-.preloader {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 99999;
-  opacity: 1;
-  margin: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-  .preloader:not([data-anistyle]) {
-    -webkit-transition: all 0.8s ease 0s;
-    -o-transition: all 0.8s ease 0s;
-    transition: all 0.8s ease 0s; }
-    .preloader:not([data-anistyle]).loaded {
-      opacity: 0; }
-    .preloader:not([data-anistyle]) .layers {
-      -webkit-clip-path: none !important;
-      clip-path: none !important; }
-  .preloader img {
-    width: 267px;
-    min-width: 267px;
-    margin-bottom: 15px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out; }
-    .preloader img:nth-child(2) {
-      opacity: 0.1;
-      -webkit-filter: blur(2px);
-      filter: blur(2px);
-      -webkit-transform: matrix(1, 0, 0, -1, 0, 0) scaleY(1);
-      -ms-transform: matrix(1, 0, 0, -1, 0, 0) scaleY(1);
-      transform: matrix(1, 0, 0, -1, 0, 0) scaleY(1); }
-  .preloader .loader {
-    z-index: 1;
-    text-align: center;
-    color: white;
-    -webkit-transition: all 0.8s ease 0s;
-    -o-transition: all 0.8s ease 0s;
-    transition: all 0.8s ease 0s; }
-    .preloader .loader span {
-      text-align: center;
-      display: block; }
-    .preloader .loader .img-content {
-      position: relative;
-      width: 400px; }
-    .preloader .loader .textfiller {
-      margin-top: 30px;
-      text-align: center;
-      font-size: 1em;
-      position: relative;
-      display: inline-block;
-      font-family: "TT Norms";
-      color: #ddaa1c;
-      font-style: italic; }
-      .preloader .loader .textfiller .text-shadow {
-        display: inline-block;
-        -webkit-transition: all 1s ease;
-        -o-transition: all 1s ease;
-        transition: all 1s ease;
-        position: absolute;
-        background-color: rgba(23, 32, 47, 0.5);
-        height: 100%;
-        width: 100%;
-        left: 0;
-        top: 0; }
-    .preloader .loader .percent {
-      font-size: 15px;
-      margin-top: 15px;
-      display: none;
-      padding-left: 10px;
-      font-weight: 700; }
-
-.svg-animate {
-  position: absolute;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  bottom: 0; }
-  .svg-animate .stroke-logo {
-    top: 5vh;
-    left: -28px;
-    stroke-dasharray: 9110;
-    stroke-dashoffset: 9110;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    width: 800px;
-    height: 800px;
-    position: relative; }
-  .svg-animate .svg-image {
-    stroke: #304362;
-    -webkit-transition: all 1.75s ease-in-out, stroke-width 2s ease-in-out;
-    -o-transition: all 1.75s ease-in-out, stroke-width 2s ease-in-out;
-    transition: all 1.75s ease-in-out, stroke-width 2s ease-in-out;
-    stroke-opacity: 0.2;
-    fill: none;
-    stroke-width: 20px; }
-
-@-webkit-keyframes swidth {
-  to, from {
-    stroke-dasharray: 18220; }
-  50% {
-    stroke-dasharray: 9110; } }
-
-@keyframes swidth {
-  to, from {
-    stroke-dasharray: 18220; }
-  50% {
-    stroke-dasharray: 9110; } }
-
-@-webkit-keyframes anistyle-1 {
-  to, from {
-    -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%, 50% 100%, 50% 0);
-    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%, 50% 100%, 50% 0); }
-  30%, 60% {
-    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
-    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0); } }
-
-@keyframes anistyle-1 {
-  to, from {
-    -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%, 50% 100%, 50% 0);
-    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%, 50% 100%, 50% 0); }
-  30%, 60% {
-    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
-    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0); } }
-
-@-webkit-keyframes anistyle-2 {
-  from {
-    -webkit-clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
-    clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%); }
-  30%, 60% {
-    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
-    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0); }
-  80% {
-    -webkit-clip-path: polygon(0 0, 0 60%, 100% 60%, 100% 0);
-    clip-path: polygon(0 0, 0 60%, 100% 60%, 100% 0); }
-  to {
-    -webkit-clip-path: polygon(0 0, 0 0, 100% 0, 100% 0);
-    clip-path: polygon(0 0, 0 0, 100% 0, 100% 0); } }
-
-@keyframes anistyle-2 {
-  from {
-    -webkit-clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
-    clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%); }
-  30%, 60% {
-    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
-    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0); }
-  80% {
-    -webkit-clip-path: polygon(0 0, 0 60%, 100% 60%, 100% 0);
-    clip-path: polygon(0 0, 0 60%, 100% 60%, 100% 0); }
-  to {
-    -webkit-clip-path: polygon(0 0, 0 0, 100% 0, 100% 0);
-    clip-path: polygon(0 0, 0 0, 100% 0, 100% 0); } }
-
-@-webkit-keyframes anistyle-3 {
-  from {
-    -webkit-clip-path: polygon(100% 100%, 0 100%, 100% 100%, 100% 0);
-    clip-path: polygon(100% 100%, 0 100%, 100% 100%, 100% 0); }
-  10% {
-    -webkit-clip-path: polygon(100% 100%, 0 100%, 100% 0, 100% 0);
-    clip-path: polygon(100% 100%, 0 100%, 100% 0, 100% 0); }
-  30%, 60% {
-    -webkit-clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0);
-    clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0); }
-  85% {
-    -webkit-clip-path: polygon(100% 100%, 100% 100%, 0 0, 100% 0);
-    clip-path: polygon(100% 100%, 100% 100%, 0 0, 100% 0); }
-  to {
-    -webkit-clip-path: polygon(100% 100%, 100% 0, 0 0, 100% 0);
-    clip-path: polygon(100% 100%, 100% 0, 0 0, 100% 0); } }
-
-@keyframes anistyle-3 {
-  from {
-    -webkit-clip-path: polygon(100% 100%, 0 100%, 100% 100%, 100% 0);
-    clip-path: polygon(100% 100%, 0 100%, 100% 100%, 100% 0); }
-  10% {
-    -webkit-clip-path: polygon(100% 100%, 0 100%, 100% 0, 100% 0);
-    clip-path: polygon(100% 100%, 0 100%, 100% 0, 100% 0); }
-  30%, 60% {
-    -webkit-clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0);
-    clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0); }
-  85% {
-    -webkit-clip-path: polygon(100% 100%, 100% 100%, 0 0, 100% 0);
-    clip-path: polygon(100% 100%, 100% 100%, 0 0, 100% 0); }
-  to {
-    -webkit-clip-path: polygon(100% 100%, 100% 0, 0 0, 100% 0);
-    clip-path: polygon(100% 100%, 100% 0, 0 0, 100% 0); } }
-
-@-webkit-keyframes anistyle-4 {
-  from {
-    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 8%, 100% 7%, 100% 93%, 0 94%, 0 100%, 100% 100%, 100% 0%);
-    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 8%, 100% 7%, 100% 93%, 0 94%, 0 100%, 100% 100%, 100% 0%); }
-  30%, 60% {
-    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 50%, 0 50%, 0 100%, 100% 100%, 100% 0%);
-    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 50%, 0 50%, 0 100%, 100% 100%, 100% 0%); }
-  to {
-    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
-    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%); } }
-
-@keyframes anistyle-4 {
-  from {
-    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 8%, 100% 7%, 100% 93%, 0 94%, 0 100%, 100% 100%, 100% 0%);
-    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 8%, 100% 7%, 100% 93%, 0 94%, 0 100%, 100% 100%, 100% 0%); }
-  30%, 60% {
-    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 50%, 0 50%, 0 100%, 100% 100%, 100% 0%);
-    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 50%, 0 50%, 0 100%, 100% 100%, 100% 0%); }
-  to {
-    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
-    clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%); } }
-
-@-webkit-keyframes anistyle-5 {
-  from {
-    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  40%, 60% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  65% {
-    -webkit-clip-path: polygon(0 0, 88% 0, 89% 100%, 0 100%);
-    clip-path: polygon(0 0, 88% 0, 89% 100%, 0 100%); }
-  to {
-    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); } }
-
-@keyframes anistyle-5 {
-  from {
-    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  40%, 60% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  65% {
-    -webkit-clip-path: polygon(0 0, 88% 0, 89% 100%, 0 100%);
-    clip-path: polygon(0 0, 88% 0, 89% 100%, 0 100%); }
-  to {
-    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); } }
-
-#prebox:not(.loadedstep).loaded {
-  pointer-events: none; }
-  #prebox:not(.loadedstep).loaded .layers {
-    -webkit-clip-path: polygon(0 0, 100% 100%, 100% 100%, 100% 100%, 0 0, 0 0);
-    clip-path: polygon(0 0, 100% 100%, 100% 100%, 100% 100%, 0 0, 0 0); }
-
-#prebox.loadedstep .svg-image {
-  -webkit-animation: swidth 2s ease infinite;
-  animation: swidth 2s ease infinite; }
-
-#prebox[data-anistyle="1"] .layers {
-  -webkit-animation: anistyle-1 2s ease 1 0s;
-  animation: anistyle-1 2s ease 1 0s; }
-
-#prebox[data-anistyle="2"] .layers {
-  -webkit-animation: anistyle-2 2s linear 1;
-  animation: anistyle-2 2s linear 1; }
-
-#prebox[data-anistyle="3"] .layers {
-  -webkit-animation: anistyle-3 2.3s linear 1;
-  animation: anistyle-3 2.3s linear 1; }
-
-#prebox[data-anistyle="4"] .layers {
-  -webkit-animation: anistyle-4 2s linear 1;
-  animation: anistyle-4 2s linear 1; }
-
-#prebox[data-anistyle="5"] .layers {
-  -webkit-animation: anistyle-5 2s linear 1;
-  animation: anistyle-5 2s linear 1; }
-
-#prebox[data-anistyle="6"] .layers {
-  -webkit-animation: anistyle-2 2s linear 1;
-  animation: anistyle-2 2s linear 1; }
-
-.layers {
-  position: absolute;
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 100%;
-  background-color: #17202f;
-  -webkit-transition: all 0s ease 2s;
-  -o-transition: all 0s ease 2s;
-  transition: all 0s ease 2s; }
 
 /* Player */
 /* Accessibility: hide screen reader texts (and prefer "top" for RTL languages).
