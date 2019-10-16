@@ -429,9 +429,7 @@ figcaption{
 		transition: all 0.3s ease;
 		background-color: rgba(darken($color-2, 5%), 0.5);
 		box-shadow:  0 0 0 0 transparent;
-		.align-i-center{
-			height: 150px;
-		}
+
 		h3{
 			margin-top: 0;
 		}
@@ -1554,6 +1552,7 @@ figcaption{
 	}
 	.desc-content{
 		padding: 2% 5%;
+		width: 100%;
 		p{
 			margin-top: 20px;
 		}
@@ -1613,6 +1612,7 @@ figcaption{
 					border-bottom: 1px solid rgba(white, 0.05);
 				}
 				&:hover{
+					cursor: pointer;
 					background-color: rgba(darken($color-2, 5%), 0.5);
 				}
 			}
@@ -1709,6 +1709,15 @@ figcaption{
 				opacity: 0;
 				transition: all 0.8s ease 0.7s;
 			}	
+		}
+		.boxes-cell-wrapper{
+			font-size: 0.80em;
+			.align-i-center{
+				height: 100px;
+			}
+			p{
+				display: none;
+			}
 		}
 		.bg-wrapper{
 			.img{
@@ -2105,15 +2114,9 @@ figcaption{
 		clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 8%, 100% 7%, 100% 93%, 0 94%, 0 100%, 100% 100%, 100% 0%);
 	}
 	30%, 60%{
-		//clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 51%, 0 51%, 0 100%, 100% 100%, 100% 0%);
 		clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 50%, 0 50%, 0 100%, 100% 100%, 100% 0%);
 	}
-	// 40%, 50%{
-	// 	//clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 45%, 100% 50%, 100% 45%, 0 50%, 0 100%, 100% 100%, 100% 0%);
-	// 	clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 99.9%, 100% 0, 100% 0.1%, 0% 100%, 0 100%, 100% 100%, 100% 0%);
-	// }
 	to{
-		//clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 8%, 100% 7%, 100% 93%, 0 94%, 0 100%, 100% 100%, 100% 0%);
 		clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
 	}
 }
@@ -2122,7 +2125,6 @@ figcaption{
 		clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 	}
 	40%, 60%{
-		//clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 50%, 100% 50%, 100% 51%, 0 51%, 0 100%, 100% 100%, 100% 0%);
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 	}
 	65%{
@@ -2193,13 +2195,9 @@ figcaption{
 	display: flex;
   align-items: center;
   justify-content: center;
-	//clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
 	height: 100%;
 	background-color: darken($color-2, 0%);
 	transition: all 0s ease 0s;
-	//clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
-	//clip-path: polygon(0 0, 100% 100%, 100% 100%, 100% 100%, 0 0, 0 0);
-	//pointer-events: ;
 }
 
 .first-layers{
@@ -2256,7 +2254,7 @@ figcaption{
 	}
 }
 #prebox{
-	&:not(.loaded){
+	&:not([data-anistyle]){
 		.layers{
 			display: none;
 			transition: all 0s linear 0s !important;

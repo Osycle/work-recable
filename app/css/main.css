@@ -9422,8 +9422,6 @@ figcaption {
     background-color: rgba(15, 20, 30, 0.5);
     -webkit-box-shadow: 0 0 0 0 transparent;
     box-shadow: 0 0 0 0 transparent; }
-    .short-advantages .boxes-cell-wrapper .align-i-center {
-      height: 150px; }
     .short-advantages .boxes-cell-wrapper h3 {
       margin-top: 0; }
     .short-advantages .boxes-cell-wrapper .num {
@@ -10431,7 +10429,8 @@ figcaption {
         display: none; } }
 
 .productions-items .desc-content {
-  padding: 2% 5%; }
+  padding: 2% 5%;
+  width: 100%; }
   .productions-items .desc-content p {
     margin-top: 20px; }
 
@@ -10499,6 +10498,7 @@ figcaption {
     #product_accordion .product-body ul li:not(:last-child) {
       border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
     #product_accordion .product-body ul li:hover {
+      cursor: pointer;
       background-color: rgba(15, 20, 30, 0.5); }
 
 [data-scroll-block] {
@@ -10587,6 +10587,13 @@ figcaption {
   -webkit-transition: all 0.8s ease 0.7s;
   -o-transition: all 0.8s ease 0.7s;
   transition: all 0.8s ease 0.7s; }
+
+.index .short-about .boxes-cell-wrapper {
+  font-size: 0.80em; }
+  .index .short-about .boxes-cell-wrapper .align-i-center {
+    height: 100px; }
+  .index .short-about .boxes-cell-wrapper p {
+    display: none; }
 
 .index .short-about .bg-wrapper .img {
   width: 100%;
@@ -11199,7 +11206,7 @@ figcaption {
     .first-layers .svg-wrapper-2 path {
       fill: rgba(255, 255, 255, 0.05); }
 
-#prebox:not(.loaded) .layers {
+#prebox:not([data-anistyle]) .layers {
   display: none;
   -webkit-transition: all 0s linear 0s !important;
   -o-transition: all 0s linear 0s !important;
