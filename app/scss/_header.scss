@@ -703,7 +703,7 @@ textarea.form-control{
 		border-bottom: 1px solid rgba(white, 0.3);
 		color: white;
 		font-style: italic;
-		&:focus{
+		&:focus, &.filled{
 			border-color: rgba($color-3, 0.5);
 			&~.label-placeholder{
 				transform: translateY(0%);

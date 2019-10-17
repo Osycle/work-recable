@@ -9045,14 +9045,14 @@ textarea.form-control {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
     font-style: italic; }
-    .form-def input:focus {
+    .form-def input:focus, .form-def input.filled {
       border-color: rgba(11, 21, 38, 0.5); }
-      .form-def input:focus ~ .label-placeholder {
+      .form-def input:focus ~ .label-placeholder, .form-def input.filled ~ .label-placeholder {
         -webkit-transform: translateY(0%);
         -ms-transform: translateY(0%);
         transform: translateY(0%);
         opacity: 1; }
-      .form-def input:focus ~ i {
+      .form-def input:focus ~ i, .form-def input.filled ~ i {
         color: #ddaa1c; }
   .form-def .fancybox-close-small {
     background: #ddaa1c;
