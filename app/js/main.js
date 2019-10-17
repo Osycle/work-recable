@@ -130,7 +130,6 @@
 				},
 				beforeClose: function(){
 					$("video")[0].pause();
-						console.log("хуй");
 				},
 				touch : false,
 				transitionDuration : 366,

@@ -628,10 +628,9 @@ table {
 }
 
 
-
 .btn-def{
 	@extend .btn-style;
-	transition: all 0.2s ease;
+	transition: all 0.5s ease;
 	*{
 		color: inherit;
 		backface-visibility: hidden;
@@ -644,16 +643,24 @@ table {
 	font-weight: 600;
 	text-transform: uppercase;
 	&:not([class*="color-"]):not([class*="bg-color"]){
-		color: black;
+		color: white;
 	}
 	&:not([class*="bg-color"]){
-		background-color: $color-1;
-		background: linear-gradient(to top, #e09108, $color-1);
-		box-shadow: 0 3px 13px 0 rgba($color-1, 0.5);
+		//background-color: $color-1;
+		background-image: linear-gradient(to right, #e09108 50%, $color-1 100%);
+		box-shadow: 0 3px 13px 0 rgba($color-1, 0.0);
+    background-repeat: no-repeat;
+    background-position-x: 0;
+    background-size: 0;
+    outline-offset: -1px;
+    outline: 1px solid $color-1;
 	}	
 	&:not(.changecolor-none):hover{
 		//box-shadow: 0px 0px 15px 2px $color-1;
 		transform: translateY(-3px);
+		color: black;
+		background-size: 100%;
+		box-shadow: 0 3px 13px 0 rgba($color-1, 0.5);
 	}
 	&.radius{
 		border-radius: 20px;
@@ -880,23 +887,23 @@ body{
 
 }
 
-// :hover{
-// 	cursor: url('../img/other/cursor-default-2.png'), default;
-// }
-// a, [role="button"], button{
-// 	&:hover{
-// 		&, *{
-// 			cursor: url('../img/other/cursor-pointer-2.png'), pointer;
-// 		}
-// 	}
-// }
-// input, textarea{
-// 	&:hover{
-// 		&, *{
-// 			cursor: text;
-// 		}
-// 	}
-// }
+:hover{
+	cursor: url('../img/other/cursor-default-2.png'), default;
+}
+a, [role="button"], button{
+	&:hover{
+		&, *{
+			cursor: pointer;
+		}
+	}
+}
+input, textarea{
+	&:hover{
+		&, *{
+			cursor: text;
+		}
+	}
+}
 
 
 p, li, ul, menu{
