@@ -2277,3 +2277,48 @@ figcaption{
 		}
 	}
 }
+
+
+
+
+.search-form{
+	text-align: center;
+	.input-content{
+		position: relative;
+	}
+	.btn-def{
+		right: 0;
+		top: 0;
+		position: absolute;
+		height: 100%;
+		background-color: $color-1;
+		outline: none;
+		&:hover{
+			transform: scale(1);
+		}
+		a, button{
+			//padding-top: 0;
+			//padding-bottom: 0;
+			height: 100%;
+		}
+	}
+}
+
+.result-items{
+	.item{
+		background-color: $color-3;
+		padding: 25px 30px;
+		border: 1px solid transparent;
+		transition: all 0.3s ease;
+		margin: 15px 0;
+		h3{
+			transition: all 0.3s ease;
+		}
+		&:hover{
+			border-color: $color-1;
+			h3{
+				color: $color-1;
+			}
+		}
+	}
+}

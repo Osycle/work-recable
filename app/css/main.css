@@ -11248,6 +11248,41 @@ figcaption {
   -ms-transform: scale(1);
   transform: scale(1); }
 
+.search-form {
+  text-align: center; }
+  .search-form .input-content {
+    position: relative; }
+  .search-form .btn-def {
+    right: 0;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    background-color: #ddaa1c;
+    outline: none; }
+    .search-form .btn-def:hover {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1); }
+    .search-form .btn-def a, .search-form .btn-def button {
+      height: 100%; }
+
+.result-items .item {
+  background-color: #0b1526;
+  padding: 25px 30px;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin: 15px 0; }
+  .result-items .item h3 {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+  .result-items .item:hover {
+    border-color: #ddaa1c; }
+    .result-items .item:hover h3 {
+      color: #ddaa1c; }
+
 /* 
 		_footer.scss
 */
